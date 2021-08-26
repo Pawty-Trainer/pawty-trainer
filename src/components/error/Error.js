@@ -5,7 +5,7 @@ import { httpResponses } from '../../utils/httpResponses'
 
 export const Error = ({ errorCode, clearSelected }) => {
   let response = httpResponses.find(response =>
-    response.code === Number(errorCode)
+    response.code === errorCode
   )
   return (
     <article className='error-container'>
