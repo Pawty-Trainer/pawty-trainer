@@ -1,0 +1,15 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-div {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+}
+
+.error-h2 {
+  margin: 0;
+}
