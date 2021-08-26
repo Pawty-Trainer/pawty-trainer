@@ -1,9 +1,12 @@
 import './Header.css';
+import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
     <header>
-      <h1>Header</h1>
+      <NavLink to ='/'>Dashboard</NavLink>
+      <NavLink to ='/calendar'>Calendar</NavLink>
+      <NavLink to ='/create'>Create Dog</NavLink>
     </header>
   );
 }
