@@ -12,7 +12,7 @@ export const Error = ({ errorCode, clearSelected }) => {
       <div className='error-div'>
         <h2 className='error-h2'>Error {response.code}</h2>
         <h3>{response.message}</h3>
-        <p>{response.description}</p>
+        <p>{response.description} ugh</p>
         <Link to='/'>
           <button className='details-back' onClick={clearSelected}>Back</button>
         </Link>
