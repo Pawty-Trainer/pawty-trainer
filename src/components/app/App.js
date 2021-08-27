@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
-import { Header } from '../header/Header';
-import { Dashboard } from '../dashboard/Dashboard'
-import { Error } from '../error/Error'
+import { Header } from '../Header/Header';
+import { Dashboard } from '../Dashboard/Dashboard'
+import { Error } from '../Error/Error'
 import { fetchData } from '../../utils/fetchCalls';
 
 export const App = () => {
