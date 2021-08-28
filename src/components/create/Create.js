@@ -15,8 +15,14 @@ const Create = ({addDog}) => {
       Breed: breed
     }
     addDog(newDog)
+    clearInputs()
   }
 
+  const clearInputs = () => {
+    setName('');
+    setAge('');
+    setBreed('');
+  }
   return(
     <form>
       <h1 className='train-dog-title'>Train your dog!</h1>
