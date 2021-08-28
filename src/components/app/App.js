@@ -10,6 +10,7 @@ import Create from '../create/Create';
 export const App = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [errorCode, setErrorCode] = useState(0);
+  const [dogs, setDogs] = useState([]);
   
   const fetchAndCleanData = async () => {
     try {
