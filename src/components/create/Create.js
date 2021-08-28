@@ -8,7 +8,7 @@ const Create = () => {
     Breed: ''
   })
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     setState({ [event.target.name]: event.target.value})
   }
   return(
@@ -19,18 +19,21 @@ const Create = () => {
         placeholder='Name'
         name = 'name'
         value= {state.name}
+        onChange={handleChange}
       />
        <input
         type='number'
         placeholder='Age'
         name = 'age'
         value= {state.age}
+        onChange={handleChange}
       />
       <input
         type='text'
         placeholder='Breed'
         name = 'breed'
         value= {state.breed}
+        onChange={handleChange}
       />
       <button>Create</button>
     </form>
