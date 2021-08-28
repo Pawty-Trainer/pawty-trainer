@@ -2,10 +2,15 @@ import './Create.css';
 import React, { useState, useEffect } from 'react';
 
 const Create = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [breed, setBreed] = useState('')
+  const[state, setState] = useState({
+    Name: '',
+    Age: '',
+    Breed: ''
+  })
 
+  handleChange = event => {
+    setName(event)
+  }
   return(
     <form>
       <h1 className='train-dog-title'>Train your dog!</h1>
