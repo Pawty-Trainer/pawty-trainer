@@ -5,11 +5,19 @@ import { Header } from '../header/Header';
 import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
 import { fetchData } from '../../utils/fetchCalls';
+import Create from '../create/Create'; 
 
 export const App = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [errorCode, setErrorCode] = useState(0);
+  const [myDogs, setMyDogs] = useState([]);
   
+  const addDog = (newDog) => {
+    if (!myDogs.includes(newDog)) {
+      setMyDogs([newDog, ...myDogs]);
+    }
+  }
+
   const fetchAndCleanData = async () => {
     try {
       let fetchedData = await fetchData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
@@ -43,6 +51,10 @@ export const App = () => {
             <Route exact path='/404' render={() =>
               <Error errorCode={404} clearSelected={clearSelected} />
             }/>
+
+            <Route path='/create'>
+              <Create addDog={addDog}/>
+            </Route>
             
             <Redirect to='/404' />
           </Switch>
