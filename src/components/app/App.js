@@ -12,6 +12,10 @@ export const App = () => {
   const [errorCode, setErrorCode] = useState(0);
   const [dogs, setDogs] = useState([]);
   
+  const addDog = (newDog) => {
+    setDogs({...dogs, newDog})
+  }
+  
   const fetchAndCleanData = async () => {
     try {
       let fetchedData = await fetchData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
