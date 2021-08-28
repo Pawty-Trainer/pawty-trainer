@@ -14,7 +14,7 @@ export const App = () => {
   
   const addDog = (newDog) => {
     if (!myDogs.includes(newDog)) {
-      setMydogs([newDog, ...myDogs]);
+      setMyDogs([newDog, ...myDogs]);
     }
   }
 
@@ -53,7 +53,7 @@ export const App = () => {
             }/>
 
             <Route path='/create'>
-              <Create />
+              <Create addDog={addDog}/>
             </Route>
             
             <Redirect to='/404' />

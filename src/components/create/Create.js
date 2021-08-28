@@ -1,10 +1,21 @@
 import './Create.css';
 import React, { useState } from 'react';
 
-const Create = () => {
+const Create = ({addDog}) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('')
+
+  const submitDog = event => {
+    event.preventDefault();
+    const newDog = {
+      id: Date.now(),
+      Name: name,
+      Age: age,
+      Breed: breed
+    }
+    addDog(newDog)
+  }
 
   return(
     <form>
@@ -30,7 +41,7 @@ const Create = () => {
         value= {breed}
         onChange={(event)=> setBreed(event.target.value)}
       />
-      <button>Create</button>
+      <button onClick={event => submitDog(event)}>Create</button>
     </form>
     
   )
