@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Create = () => {
   const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState('');
   const [breed, setBreed] = useState('')
 
   return(
@@ -20,6 +20,12 @@ const Create = () => {
         placeholder='Age'
         name = 'age'
         value= {age}
+      />
+      <input
+        type='text'
+        placeholder='Breed'
+        name = 'breed'
+        value= {breed}
       />
       
     </form>
