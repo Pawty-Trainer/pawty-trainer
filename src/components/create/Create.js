@@ -5,6 +5,7 @@ const Create = ({addDog}) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
+  //Will eventually use api that backend creates to turn this into a drop down 
   const [error, setError] = useState('')
 
   const submitDog = event => {
