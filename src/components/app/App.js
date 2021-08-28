@@ -10,12 +10,14 @@ import Create from '../create/Create';
 export const App = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [errorCode, setErrorCode] = useState(0);
-  const [dogs, setDogs] = useState([]);
+  const [myDogs, setMyDogs] = useState([]);
   
   const addDog = (newDog) => {
-    setDogs({...dogs, newDog})
+    if (!myDogs.includes(newDog)) {
+      setMydogs([newDog, ...myDogs]);
+    }
   }
-  
+
   const fetchAndCleanData = async () => {
     try {
       let fetchedData = await fetchData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
