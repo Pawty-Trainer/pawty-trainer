@@ -10,7 +10,6 @@ const Create = ({addDog}) => {
 
   const submitDog = event => {
     event.preventDefault();
-    clearInputs()
     const newDog = {
       id: Date.now(),
       Name: name,
@@ -20,6 +19,7 @@ const Create = ({addDog}) => {
     if(name && age && breed) {
       addDog(newDog);
       clearError()
+      clearInputs()
     } else {
       setError('Sorry, you must input all fields before creating a dog!')
     } 
