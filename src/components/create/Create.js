@@ -1,16 +1,11 @@
 import './Create.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Create = () => {
-  const[state, setState] = useState({
-    Name: '',
-    Age: '',
-    Breed: ''
-  })
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [breed, setBreed] = useState('')
 
-  const handleChange = (event) => {
-    setState({ [event.target.name]: event.target.value})
-  }
   return(
     <form>
       <h1 className='train-dog-title'>Train your dog!</h1>
@@ -18,22 +13,22 @@ const Create = () => {
         type='text'
         placeholder='Name'
         name = 'name'
-        value= {state.name}
-        onChange={handleChange}
+        value= {name}
+        onChange={(event)=> setName(event.target.value)}
       />
        <input
         type='number'
         placeholder='Age'
         name = 'age'
-        value= {state.age}
-        onChange={handleChange}
+        value= {age}
+        onChange={(event)=> setAge(event.target.value)}
       />
       <input
         type='text'
         placeholder='Breed'
         name = 'breed'
-        value= {state.breed}
-        onChange={handleChange}
+        value= {breed}
+        onChange={(event)=> setBreed(event.target.value)}
       />
       <button>Create</button>
     </form>
