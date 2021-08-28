@@ -15,6 +15,12 @@ const Create = () => {
         name = 'name'
         value= {name}
       />
+       <input
+        type='number'
+        placeholder='Age'
+        name = 'age'
+        value= {age}
+      />
       
     </form>
     
