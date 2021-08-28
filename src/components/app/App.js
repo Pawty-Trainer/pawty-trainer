@@ -5,6 +5,7 @@ import { Header } from '../header/Header';
 import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
 import { fetchData } from '../../utils/fetchCalls';
+import Create from '../create/Create'; 
 
 export const App = () => {
   const [fetchedData, setFetchedData] = useState([]);
