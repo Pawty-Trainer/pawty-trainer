@@ -44,6 +44,10 @@ export const App = () => {
             <Route exact path='/404' render={() =>
               <Error errorCode={404} clearSelected={clearSelected} />
             }/>
+
+            <Route path='/create'>
+              <Create />
+            </Route>
             
             <Redirect to='/404' />
           </Switch>
