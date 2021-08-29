@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Error.css';
 import { httpResponses } from '../../utils/httpResponses'
 
-export const Error = ({ errorCode, clearSelected }) => {
+export const Error = ({ errorCode }) => {
   let response = httpResponses.find(response =>
     response.code === errorCode
   )
@@ -14,7 +14,7 @@ export const Error = ({ errorCode, clearSelected }) => {
         <h3>{response.message}</h3>
         <p>{response.description}</p>
         <Link to='/'>
-          <button className='details-back' onClick={clearSelected}>Back</button>
+          <button className='details-back'>Home</button>
         </Link>
       </div>
     </article>
@@ -22,6 +22,5 @@ export const Error = ({ errorCode, clearSelected }) => {
 }
 
 Error.propTypes = {
-  errorCode: PropTypes.number.isRequired,
-  clearSelected: PropTypes.func.isRequired
+  errorCode: PropTypes.number.isRequired
 };
