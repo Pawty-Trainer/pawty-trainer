@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* html {
+  min-height: 100vh;
+} */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: yellow;
+}
+
+a:active {
+  color: red;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
