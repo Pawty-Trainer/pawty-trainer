@@ -1,0 +1,20 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard > h2 {
+  text-transform: capitalize;
+}
+
+.dashboard > section {
+  display: flex;
+}
+
+.dashboard > section > section {
+  padding: 1rem 5rem;
+}
+
+li {
+  list-style-type: none;
+}

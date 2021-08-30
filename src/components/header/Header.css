@@ -1,0 +1,18 @@
+header {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  padding: 1rem;
+}
+
+nav > a {
+  font-size: xx-large;
+  text-decoration: none;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  padding-bottom: 0.3rem;
+  margin: 0 2rem;
+}
