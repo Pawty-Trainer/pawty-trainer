@@ -5,17 +5,12 @@ import './App.css';
 import { Header } from '../header/Header';
 import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
+import { AddEvent } from '../addEvent/AddEvent'
+import { Calendar } from '../calendar/Calendar'
 import Create from '../create/Create'; 
 
 export const App = () => {
   const [userID, setUserID] = useState(0);
-  // const [myDogs, setMyDogs] = useState([]);
-  
-  // const addDog = (newDog) => {
-  //   if (!myDogs.includes(newDog)) {
-  //     setMyDogs([newDog, ...myDogs]);
-  //   }
-  // }
 
   useEffect(() => {
     setUserID(1)
@@ -71,6 +66,14 @@ export const App = () => {
 
             <Route path='/create'>
               <Create userID={userID} />
+            </Route>
+
+            <Route path='/event'>
+              <AddEvent />
+            </Route>
+
+            <Route path='/calendar'>
+              <Calendar />
             </Route>
 
             <Route exact path='/404' render={() =>
