@@ -1,25 +1,49 @@
 import './Create.css';
 import React, { useState } from 'react';
+import { useMutation, gql } from "@apollo/client";
 
-const Create = ({addDog}) => {
+const ADD_NEW_DOG = gql`
+  mutation ($name: String!, $userId: Int!, $breed: String!, $age: Int!) {
+    createDog(input: {
+        name: $name,
+        userId: $userId,
+        breed: $breed,
+        age: $age
+  }) {
+      dog {
+        id
+        userId
+        name
+        breed
+        age
+      }
+      errors
+    }
+  }
+`;
+
+const Create = ({userID}) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
   //Will eventually use api that backend creates to turn this into a drop down 
   const [error, setError] = useState('')
+  const [addDog] = useMutation(ADD_NEW_DOG)
 
   const submitDog = event => {
     event.preventDefault();
-    const newDog = {
-      id: Date.now(),
-      Name: name,
-      Age: age,
-      Breed: breed
-    }
     if(name && age && breed) {
-      addDog(newDog);
+      addDog({
+        variables: {
+          name: name,
+          userId: userID,
+          breed: breed,
+          age: Number(age)
+        }
+      });
       clearError()
       clearInputs()
+
     } else {
       setError('Sorry, you must input all fields before creating a dog!')
     } 

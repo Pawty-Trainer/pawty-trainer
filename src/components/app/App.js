@@ -9,13 +9,13 @@ import Create from '../create/Create';
 
 export const App = () => {
   const [userID, setUserID] = useState(0);
-  const [myDogs, setMyDogs] = useState([]);
+  // const [myDogs, setMyDogs] = useState([]);
   
-  const addDog = (newDog) => {
-    if (!myDogs.includes(newDog)) {
-      setMyDogs([newDog, ...myDogs]);
-    }
-  }
+  // const addDog = (newDog) => {
+  //   if (!myDogs.includes(newDog)) {
+  //     setMyDogs([newDog, ...myDogs]);
+  //   }
+  // }
 
   useEffect(() => {
     setUserID(1)
@@ -70,7 +70,7 @@ export const App = () => {
             }/>
 
             <Route path='/create'>
-              <Create addDog={addDog} />
+              <Create userID={userID} />
             </Route>
 
             <Route exact path='/404' render={() =>
