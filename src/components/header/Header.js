@@ -7,8 +7,9 @@ export const Header = () => {
       <h1>Pawty Trainer</h1>
       <nav>
         <Link to ='/'>Dashboard</Link>
+        <Link to ='/create'>Add Dog</Link>
+        <Link to ='/event'>Add Event</Link>
         <Link to ='/calendar'>Calendar</Link>
-        <Link to ='/create'>Create Dog</Link>
       </nav>
     </header>
   );
