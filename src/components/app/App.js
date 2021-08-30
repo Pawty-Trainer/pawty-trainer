@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useQuery, gql } from "@apollo/client";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import { Header } from '../header/Header';
@@ -20,26 +21,66 @@ export const App = () => {
     setUserID(1)
   }, [])
 
-  return (
-    <>
-      <Header />
-      <main>
-        <Switch>
-          <Route exact path='/' render={() =>
-            <Dashboard userID={userID}/> 
-          }/>
+  const { loading, error, data } = useQuery(gql`
+    query {
+      user(id: ${userID}) {
+        id
+        name
+      } dogs {
+        id
+        name
+        breed
+        age
+      } events {
+        dogId
+        name
+        completed
+        eventDatetime
+      }
+    }
+  `);
 
-          <Route path='/create'>
-            <Create addDog={addDog}/>
-          </Route>
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <p>Loading...</p>
+      </>
+    )
+  }
 
-          <Route exact path='/404' render={() =>
-            <Error errorCode={404} />
-          }/>
-          
-          <Redirect to='/404' />
-        </Switch>
-      </main>
-    </>
-  );
+  if (error) {
+    return (
+      <>
+        <Header />
+        <Error errorCode={error} />
+      </>
+    )
+  }
+
+  if (data) {
+    console.log(data)
+    return (
+      <>
+        <Header />
+        <main>
+          <Switch>
+            <Route exact path='/' render={() =>
+              <Dashboard data={data}/> 
+            }/>
+
+            <Route path='/create'>
+              <Create addDog={addDog} />
+            </Route>
+
+            <Route exact path='/404' render={() =>
+              <Error errorCode={404} />
+            }/>
+            
+            <Redirect to='/404' />
+          </Switch>
+        </main>
+      </>
+    )
+  }
 }
