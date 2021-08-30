@@ -1,13 +1,34 @@
 import './Create.css';
 import React, { useState } from 'react';
+import { useMutation, gql } from "@apollo/client";
 
-const Create = ({addDog}) => {
+const Create = ({userID}) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
   //Will eventually use api that backend creates to turn this into a drop down 
   const [error, setError] = useState('')
 
+  const addNewDog =   useMutation(gql`
+    mutation {
+      createDog(input: {
+          name: ${name},
+          userId: ${userID},
+          breed: ${breed},
+          age: ${age}
+    }) {
+        dog {
+          id
+          userId
+          name
+          breed
+          age
+        }
+        errors
+      }
+    }
+  `)
+  
   const submitDog = event => {
     event.preventDefault();
     const newDog = {
@@ -17,7 +38,8 @@ const Create = ({addDog}) => {
       Breed: breed
     }
     if(name && age && breed) {
-      addDog(newDog);
+      // addDog(newDog);
+      addNewDog()
       clearError()
       clearInputs()
     } else {
