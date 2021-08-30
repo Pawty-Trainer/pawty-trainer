@@ -8,7 +8,10 @@ export const AddEvent = () => {
       <form>
         <h1>Add New Event</h1>
         <input
-          
+          type='text'
+          placeholder='Event'
+          // value=
+          required
         />
       </form>
     </>
