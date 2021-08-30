@@ -1,10 +1,16 @@
 import './AddEvent.css';
+import { useState } from 'react';
 
 export const AddEvent = () => {
 
   return (
     <>
-      <p>Add Event Component</p>
+      <form>
+        <h1>Add New Event</h1>
+        <input
+          
+        />
+      </form>
     </>
   )
 }
