@@ -3,11 +3,11 @@ import { useState} from 'react';
 import { useMutation, gql } from "@apollo/client";
 
 const ADD_NEW_EVENT = gql`
-  mutation ($name: String!, $dogId: Int!, $completed: Boolean!, $eventDatetime: ISO8601DateTime!){
+  mutation ($name: String!, $dogId: Int!, $eventDatetime: ISO8601DateTime!){
     createEvent(input: {
       name: $name,
       dogId: $dogId,
-      completed: $completed,
+      completed: false,
       eventDatetime: $eventDatetime
   }) {
       event {
@@ -24,6 +24,7 @@ const ADD_NEW_EVENT = gql`
 export const AddEvent = ({dogs}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
+  const [dogId, setDogId] = useState(0)
   const [completed, setComplete] = useState(false);
   const [error, setError] = useState('');
   const [addNewEvent] = useMutation(ADD_NEW_EVENT)
@@ -34,7 +35,7 @@ export const AddEvent = ({dogs}) => {
     if(eventName && eventDate) {
     addNewEvent({
       variables: {
-        // dogId: userID,
+        dogId: dogId,
         name: eventName,
         eventDatetime: eventDate
       }
@@ -57,7 +58,6 @@ export const AddEvent = ({dogs}) => {
 
 
   return (
-    //map through dog, and create an option for each name. The value will be the dog id
     <>
       <form>
         <h1>Add New Event</h1>
@@ -68,10 +68,14 @@ export const AddEvent = ({dogs}) => {
           onChange={(event)=> setEventName(event.target.value)}
           required
         />
-        <select>
+        <label>Select dog:</label>
+        <select onChange={(event)=> setDogId(event.target.value)}>
           {dogs.map(dog => (
-            <option key={dog.id} value={dog.name}>
-            {dog.name}
+            <option 
+              key={dog.id} 
+              value={dog.id}
+            >
+              {dog.name}
           </option>
           ))}
         </select>
@@ -84,7 +88,8 @@ export const AddEvent = ({dogs}) => {
           required
         />
         <button onClick={event=> submitEvent(event)}>Submit</button>
-      </form>
+        <p>{error}</p>
+      </form> 
     </>
   )
 }
