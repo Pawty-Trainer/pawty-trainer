@@ -64,12 +64,19 @@ export const App = () => {
     )
   }
 
+  const sortEvents = (listOfEvents) => {
+    let spreadArray = [...listOfEvents]
+    return spreadArray.sort((a, b) => {
+      return new Date(a.eventDatetime) - new Date(b.eventDatetime)
+    })
+  }
+
   if (data.dogs.length && !dogs.length) {
     setDogs(data.dogs)
   }
 
   if (data.events.length && !events.length) {
-    setEvents(data.events)
+    setEvents(sortEvents(data.events))
   }
 
   if (data) {
@@ -79,7 +86,7 @@ export const App = () => {
         <main>
           <Switch>
             <Route exact path='/' render={() =>
-              <Dashboard userName={data.user.name} dogs={dogs} /> 
+              <Dashboard userName={data.user.name} dogs={dogs} events={events} /> 
             }/>
 
             <Route path='/create'>

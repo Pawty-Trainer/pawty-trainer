@@ -1,7 +1,8 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom'
+import { EventCard } from '../eventCard/EventCard'
 
-export const Dashboard = ({ userName, dogs }) => {
+export const Dashboard = ({ userName, dogs, events }) => {
 
   let dogList = []
   if (dogs.length) {
@@ -16,12 +17,25 @@ export const Dashboard = ({ userName, dogs }) => {
     })
   }
 
-  if (dogs.length) {
+  events.splice(2)
+  let eventList = []
+  if (events.length) {
+    eventList = events.map(event => {
+      return (
+        <Link to={`/event/${event.id}`} key={event.id} >
+          <EventCard event={event} />
+        </Link>
+      )
+    })
+  }
+
+  if (dogs.length && events.length) {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
   
         <section>
+
           <section>
             <h3>My Dogs</h3>
             <ul>
@@ -31,14 +45,49 @@ export const Dashboard = ({ userName, dogs }) => {
   
           <section>
             <h3>Upcoming Events</h3>
-            <dl>
-              <dt>Today</dt>
-              <dd>6pm - Sit with Fifi</dd>
-  
-              <dt>Tomorrow</dt>
-              <dd>4pm - Play with Fifi</dd>
-            </dl>
+            {eventList}
           </section>
+
+        </section>
+      </section>
+    )
+  } if (dogs.length && !events.length) {
+    return (
+      <section className="dashboard">
+        <h2>Welcome {userName}!</h2>
+  
+        <section>
+          
+          <section>
+            <h3>My Dogs</h3>
+            <ul>
+              {dogList}
+            </ul>
+          </section>
+  
+          <section>
+            <h3>No Upcoming Events</h3>
+          </section>
+
+        </section>
+      </section>
+    )
+  } if (!dogs.length && events.length) {
+    return (
+      <section className="dashboard">
+        <h2>Welcome {userName}!</h2>
+  
+        <section>
+          
+          <section>
+            <h3>Add a dog!</h3>
+          </section>
+  
+          <section>
+            <h3>Upcoming Events</h3>
+            {eventList}
+          </section>
+
         </section>
       </section>
     )
@@ -53,6 +102,7 @@ export const Dashboard = ({ userName, dogs }) => {
           </section>
   
           <section>
+            <h3>No Upcoming Events</h3>
           </section>
         </section>
       </section>
