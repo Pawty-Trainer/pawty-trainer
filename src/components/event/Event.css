@@ -1,0 +1,15 @@
+.event > dl > dt {
+  float: left;
+  clear: left;
+  width: auto;
+}
+
+.event > dl > dt::after {
+  content: ":";
+}
+
+.event > dl > dd {
+  margin: 0 0 0 100px;
+  display: flex;
+  align-items: flex-start;
+}
