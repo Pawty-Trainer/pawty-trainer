@@ -2,7 +2,7 @@ import './AddEvent.css';
 import { useState } from 'react';
 
 export const AddEvent = () => {
-
+  const [eventName, setEventName] = useState('')
   return (
     <>
       <form>
