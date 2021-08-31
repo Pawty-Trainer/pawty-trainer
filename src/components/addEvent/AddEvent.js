@@ -1,11 +1,26 @@
 import './AddEvent.css';
 import { useState } from 'react';
 
-export const AddEvent = () => {
+export const AddEvent = ({addEvent}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [error, setError] = useState('')
 
+  const submitEvent = event => {
+    event.preventDefault();
+    const newEvent = {
+      id:Date.now(),
+      eventName: eventName,
+      EventDate: eventDate
+    }
+    if(eventName && eventDate) {
+     addEvent(newEvent)
+     clearError()
+     clearInputs()
+    } else {
+      setError('Sorry, you must input all fields before creating an event!')
+    }
+  }
   const clearInputs = () => {
     setEventName('');
     setEventDate('');
@@ -34,6 +49,7 @@ export const AddEvent = () => {
           onChange={(event)=> setEventDate(event.target.value)}
           required
         />
+        <button onClick={event=> submitEvent(event)}>Submit</button>
       </form>
     </>
   )
