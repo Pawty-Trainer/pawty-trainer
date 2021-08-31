@@ -21,7 +21,7 @@ const ADD_NEW_EVENT = gql`
     }
   }
   `;
-export const AddEvent = ({userID}) => {
+export const AddEvent = ({dogs}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [completed, setComplete] = useState(false);
@@ -34,7 +34,7 @@ export const AddEvent = ({userID}) => {
     if(eventName && eventDate) {
     addNewEvent({
       variables: {
-        dogId: userID,
+        // dogId: userID,
         name: eventName,
         eventDatetime: eventDate
       }
@@ -55,6 +55,7 @@ export const AddEvent = ({userID}) => {
     setError('')
   }
 
+
   return (
     //map through dog, and create an option for each name. The value will be the dog id
     <>
@@ -67,6 +68,13 @@ export const AddEvent = ({userID}) => {
           onChange={(event)=> setEventName(event.target.value)}
           required
         />
+        <select>
+          {dogs.map(dog => (
+            <option key={dog.id} value={dog.name}>
+            {dog.name}
+          </option>
+          ))}
+        </select>
         <label>Set event date:</label>
         <input
           type='date'
