@@ -9,12 +9,12 @@ export const AddEvent = () => {
         <h1>Add New Event</h1>
         <input
           type='text'
-          placeholder='Event'
+          placeholder='Event Name'
           // value=
           required
         />
         <input
-          type='text'
+          type='date'
           placeholder='EventDateTime'
           // value=
           required
