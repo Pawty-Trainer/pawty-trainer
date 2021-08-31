@@ -3,7 +3,7 @@ import { useState} from 'react';
 import { useMutation, gql } from "@apollo/client";
 
 const ADD_NEW_EVENT = gql`
-  mutation ($name: String!, $dogId: Int!, $completed: Boolean!, $eventDatetime: String!){
+  mutation ($name: String!, $dogId: Int!, $completed: Boolean!, $eventDatetime: ISO8601DateTime!){
     createEvent(input: {
       name: $name,
       dogId: $dogId,
@@ -24,7 +24,7 @@ const ADD_NEW_EVENT = gql`
 export const AddEvent = ({userID}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
-  const [completed, setComplete] = useState(false)
+  const [completed, setComplete] = useState(false);
   const [error, setError] = useState('');
   const [addNewEvent] = useMutation(ADD_NEW_EVENT)
 
@@ -56,6 +56,7 @@ export const AddEvent = ({userID}) => {
   }
 
   return (
+    //map through dog, and create an option for each name. The value will be the dog id
     <>
       <form>
         <h1>Add New Event</h1>
