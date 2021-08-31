@@ -7,10 +7,12 @@ import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
 import { AddEvent } from '../addEvent/AddEvent'
 import { Calendar } from '../calendar/Calendar'
-import Create from '../create/Create'; 
+import { Dog } from '../dog/Dog'
+import Create from '../create/Create';
 
 export const App = () => {
   const [userID, setUserID] = useState(0);
+  const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
     setUserID(1)
@@ -35,6 +37,13 @@ export const App = () => {
     }
   `);
 
+  const removeDog = (dogObject) => {
+    let currentDogs = [...dogs]
+    let ind = currentDogs.indexOf(dogObject)
+    currentDogs.splice(ind, 1)
+    setDogs([...currentDogs])
+  }
+
   if (loading) {
     return (
       <>
@@ -53,15 +62,18 @@ export const App = () => {
     )
   }
 
+  if (data.dogs.length && !dogs.length) {
+    setDogs(data.dogs)
+  }
+
   if (data) {
-    console.log(data)
     return (
       <>
         <Header />
         <main>
           <Switch>
             <Route exact path='/' render={() =>
-              <Dashboard data={data}/> 
+              <Dashboard data={data} dogs={dogs} /> 
             }/>
 
             <Route path='/create'>
@@ -75,6 +87,14 @@ export const App = () => {
             <Route path='/calendar'>
               <Calendar />
             </Route>
+
+            <Route path='/dog/:id' render={({ match }) => {
+              let matchingDog = data.dogs.find(dog => dog.id === match.params.id);
+              if (!matchingDog) {
+                return (<div>Couldn't find this dog.</div>);  
+              }
+              return <Dog matchingDog={matchingDog} removeDog={removeDog} />
+            }} />
 
             <Route exact path='/404' render={() =>
               <Error errorCode={404} />
