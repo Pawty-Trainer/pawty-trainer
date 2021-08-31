@@ -7,12 +7,14 @@ import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
 import { AddEvent } from '../addEvent/AddEvent'
 import { Calendar } from '../calendar/Calendar'
+import { Event } from '../event/Event'
 import { Dog } from '../dog/Dog'
 import Create from '../create/Create';
 
 export const App = () => {
   const [userID, setUserID] = useState(0);
   const [dogs, setDogs] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     setUserID(1)
@@ -30,9 +32,9 @@ export const App = () => {
         breed
         age
       } events {
+        id
         dogId
         name
-        completed
         eventDatetime
       }
     }
@@ -67,6 +69,10 @@ export const App = () => {
     setDogs(data.dogs)
   }
 
+  if (data.events.length && !events.length) {
+    setEvents(data.events)
+  }
+
   if (data) {
     return (
       <>
@@ -74,27 +80,34 @@ export const App = () => {
         <main>
           <Switch>
             <Route exact path='/' render={() =>
-              <Dashboard data={data} dogs={dogs} /> 
+              <Dashboard userName={data.user.name} dogs={dogs} /> 
             }/>
 
             <Route path='/create'>
               <Create userID={userID} />
             </Route>
-
-            <Route path='/event'>
-              <AddEvent userID={userID}/>
+            <Route path='/add_event'>
+              <AddEvent />
             </Route>
 
             <Route path='/calendar'>
-              <Calendar />
+              <Calendar events={events} />
             </Route>
 
             <Route path='/dog/:id' render={({ match }) => {
-              let matchingDog = data.dogs.find(dog => dog.id === match.params.id);
+              let matchingDog = dogs.find(dog => dog.id === match.params.id);
               if (!matchingDog) {
                 return (<div>Couldn't find this dog.</div>);  
               }
               return <Dog matchingDog={matchingDog} removeDog={removeDog} />
+            }} />
+
+            <Route path='/event/:id' render={({ match }) => {
+              let matchingEvent = events.find(event => event.id === match.params.id);
+              if (!matchingEvent) {
+                return (<div>Couldn't find this event.</div>);  
+              }
+              return <Event matchingEvent={matchingEvent} />
             }} />
 
             <Route exact path='/404' render={() =>

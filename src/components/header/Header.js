@@ -8,7 +8,7 @@ export const Header = () => {
       <nav>
         <Link to ='/'>Dashboard</Link>
         <Link to ='/create'>Add Dog</Link>
-        <Link to ='/event'>Add Event</Link>
+        <Link to ='/add_event'>Add Event</Link>
         <Link to ='/calendar'>Calendar</Link>
       </nav>
     </header>

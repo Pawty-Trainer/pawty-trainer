@@ -1,7 +1,7 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom'
 
-export const Dashboard = ({ data, dogs }) => {
+export const Dashboard = ({ userName, dogs }) => {
 
   let dogList = []
   if (dogs.length) {
@@ -16,10 +16,10 @@ export const Dashboard = ({ data, dogs }) => {
     })
   }
 
-  if (data.dogs.length) {
+  if (dogs.length) {
     return (
       <section className="dashboard">
-        <h2>Welcome {data.user.name}!</h2>
+        <h2>Welcome {userName}!</h2>
   
         <section>
           <section>
@@ -43,10 +43,9 @@ export const Dashboard = ({ data, dogs }) => {
       </section>
     )
   } else {
-    console.log('no dogs')
     return (
       <section className="dashboard">
-        <h2>Welcome {data.user.name}!</h2>
+        <h2>Welcome {userName}!</h2>
   
         <section>
           <section>
