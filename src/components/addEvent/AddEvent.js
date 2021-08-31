@@ -11,7 +11,9 @@ export const AddEvent = () => {
     setEventDate('');
   }
   
-  
+  const clearError = () => {
+    setError('')
+  }
   return (
     <>
       <form>
