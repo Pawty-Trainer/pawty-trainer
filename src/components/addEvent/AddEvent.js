@@ -13,6 +13,12 @@ export const AddEvent = () => {
           // value=
           required
         />
+        <input
+          type='text'
+          placeholder='EventDateTime'
+          // value=
+          required
+        />
       </form>
     </>
   )
