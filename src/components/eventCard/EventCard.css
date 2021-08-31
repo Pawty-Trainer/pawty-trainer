@@ -1,0 +1,20 @@
+.event-card > dl > dt {
+  float: left;
+  clear: left;
+  width: auto;
+}
+
+.event-card > dl > dt::after {
+  content: ":";
+}
+
+.event-card > dl > dd {
+  margin: 0 0 0 150px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.event-card {
+  margin: 3rem;
+  border:  5px solid red;
+}
