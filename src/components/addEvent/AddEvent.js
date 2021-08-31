@@ -14,6 +14,7 @@ export const AddEvent = () => {
   const clearError = () => {
     setError('')
   }
+
   return (
     <>
       <form>
@@ -21,14 +22,16 @@ export const AddEvent = () => {
         <input
           type='text'
           placeholder='Event Name'
-          // value=
+          value={eventName}
+          onChange={(event)=> setEventName(event.target.value)}
           required
         />
         <label>Set event date:</label>
         <input
           type='date'
           placeholder='EventDateTime'
-          // value=
+          value= {eventDate}
+          onChange={(event)=> setEventDate(event.target.value)}
           required
         />
       </form>
