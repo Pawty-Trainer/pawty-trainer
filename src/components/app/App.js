@@ -11,17 +11,13 @@ import Create from '../create/Create';
 
 export const App = () => {
   const [userID, setUserID] = useState(0);
-  const [events, setEvents] = useState([])
+  // const [events, setEvents] = useState([])
 
   useEffect(() => {
     setUserID(1)
   }, [])
 
-  const addEvent = (newEvent) => {
-    if(!events.includes(newEvent)) {
-      setEvents([newEvent, ...events])
-    }
-  }
+ 
   const { loading, error, data } = useQuery(gql`
     query {
       user(id: ${userID}) {
@@ -75,7 +71,7 @@ export const App = () => {
             </Route>
 
             <Route path='/event'>
-              <AddEvent addEvent={addEvent}/>
+              <AddEvent userID={userID}/>
             </Route>
 
             <Route path='/calendar'>

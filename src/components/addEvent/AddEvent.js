@@ -1,20 +1,44 @@
 import './AddEvent.css';
-import { useState } from 'react';
+import { useState} from 'react';
+import { useMutation, gql } from "@apollo/client";
 
-export const AddEvent = ({addEvent}) => {
+const ADD_NEW_EVENT = gql`
+  mutation ($name: String!, $dogId: Int!, $completed: Boolean!, $eventDatetime: String!){
+    createEvent(input: {
+      name: $name,
+      dogId: $dogId,
+      completed: $completed,
+      eventDatetime: $eventDatetime
+  }) {
+      event {
+        id
+        dogId
+        name
+        completed
+        eventDatetime
+      }
+      errors
+    }
+  }
+  `;
+export const AddEvent = ({userID}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
-  const [error, setError] = useState('')
+  const [completed, setComplete] = useState(false)
+  const [error, setError] = useState('');
+  const [addNewEvent] = useMutation(ADD_NEW_EVENT)
 
   const submitEvent = event => {
     event.preventDefault();
-    const newEvent = {
-      id:Date.now(),
-      eventName: eventName,
-      EventDate: eventDate
-    }
+    setComplete(true);
     if(eventName && eventDate) {
-     addEvent(newEvent)
+    addNewEvent({
+      variables: {
+        dogId: userID,
+        name: eventName,
+        eventDatetime: eventDate
+      }
+    })
      clearError()
      clearInputs()
     } else {
@@ -24,6 +48,7 @@ export const AddEvent = ({addEvent}) => {
   const clearInputs = () => {
     setEventName('');
     setEventDate('');
+    setComplete(false)
   }
   
   const clearError = () => {
