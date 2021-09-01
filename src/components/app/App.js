@@ -94,7 +94,7 @@ export const App = () => {
             </Route>
 
             <Route path='/add_event'>
-              <AddEvent />
+              <AddEvent dogs={dogs}/>
             </Route>
 
             <Route path='/calendar'>
