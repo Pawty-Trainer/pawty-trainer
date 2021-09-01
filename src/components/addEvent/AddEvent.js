@@ -35,7 +35,6 @@ export const AddEvent = ({dogs}) => {
 
   const submitEvent = event => {
     event.preventDefault();
-    setComplete(true);
     if(eventName && eventDate) {
     addNewEvent({
       variables: {
