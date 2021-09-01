@@ -27,7 +27,7 @@ export const AddEvent = ({dogs}) => {
   const [eventDate, setEventDate] = useState('');
   const [dogId, setDogId] = useState(0)
   const [error, setError] = useState('');
-  const [addNewEvent,] = useMutation(ADD_NEW_EVENT)
+  const [addNewEvent] = useMutation(ADD_NEW_EVENT)
 
   // {
   //   refetchQueries: []
