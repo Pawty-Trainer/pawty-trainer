@@ -8,7 +8,7 @@ const ADD_NEW_EVENT = gql`
       name: $name,
       dogId: $dogId,
       completed: false,
-      eventDatetime: $eventDatetime
+      eventDatetime: $eventDatetime,  
   }) {
       event {
         id
@@ -21,6 +21,7 @@ const ADD_NEW_EVENT = gql`
     }
   }
   `;
+
 export const AddEvent = ({dogs}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');

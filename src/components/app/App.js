@@ -33,7 +33,9 @@ export const App = () => {
         age
       } events {
         id
-        dogId
+        dog {
+          ida   
+        }
         name
         eventDatetime
       }
