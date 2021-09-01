@@ -20,7 +20,6 @@ export const App = () => {
     setUserID(1)
   }, [])
 
- 
   const { loading, error, data } = useQuery(gql`
     query {
       user(id: ${userID}) {
@@ -33,9 +32,7 @@ export const App = () => {
         age
       } events {
         id
-        dog {
-          ida   
-        }
+        dogId
         name
         eventDatetime
       }
@@ -95,6 +92,7 @@ export const App = () => {
             <Route path='/create'>
               <Create userID={userID} />
             </Route>
+
             <Route path='/add_event'>
               <AddEvent dogs={dogs}/>
             </Route>

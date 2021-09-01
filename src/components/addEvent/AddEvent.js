@@ -1,6 +1,6 @@
 import './AddEvent.css';
-import { useState} from 'react';
-import { useMutation, gql } from "@apollo/client";
+import { useState } from 'react';
+import { useMutation, gql, useQuery } from "@apollo/client";
 
 const ADD_NEW_EVENT = gql`
   mutation ($name: String!, $dogId: Int!, $eventDatetime: ISO8601DateTime!){
@@ -28,7 +28,9 @@ export const AddEvent = ({dogs}) => {
   const [dogId, setDogId] = useState(0)
   const [completed, setComplete] = useState(false);
   const [error, setError] = useState('');
-  const [addNewEvent] = useMutation(ADD_NEW_EVENT)
+  const [addNewEvent,] = useMutation(ADD_NEW_EVENT, {
+    refetchQueries: []
+  })
 
   const submitEvent = event => {
     event.preventDefault();
@@ -36,7 +38,7 @@ export const AddEvent = ({dogs}) => {
     if(eventName && eventDate) {
     addNewEvent({
       variables: {
-        dogId: dogId,
+        dogId: Number(dogId),
         name: eventName,
         eventDatetime: eventDate
       }
@@ -56,7 +58,6 @@ export const AddEvent = ({dogs}) => {
   const clearError = () => {
     setError('')
   }
-
 
   return (
     <>
