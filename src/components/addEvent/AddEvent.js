@@ -26,7 +26,6 @@ export const AddEvent = ({dogs}) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [dogId, setDogId] = useState(0)
-  const [completed, setComplete] = useState(false);
   const [error, setError] = useState('');
   const [addNewEvent,] = useMutation(ADD_NEW_EVENT)
 
@@ -54,7 +53,6 @@ export const AddEvent = ({dogs}) => {
   const clearInputs = () => {
     setEventName('');
     setEventDate('');
-    setComplete(false)
   }
   
   const clearError = () => {
