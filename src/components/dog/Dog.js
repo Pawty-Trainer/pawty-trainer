@@ -5,7 +5,7 @@ import { DELETE_DOG } from '../../utils/graph_mutations';
 
 export const Dog = ({ matchingDog, removeDog }) => {
   let history = useHistory()
-  const [deleteDog] = useMutation(DELETE_DOG)
+  const [deleteDog, { loading, error }] = useMutation(DELETE_DOG)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -17,6 +17,9 @@ export const Dog = ({ matchingDog, removeDog }) => {
     removeDog(matchingDog)
     history.push("/")
   }
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
   return (
     <section className="dog-details">
