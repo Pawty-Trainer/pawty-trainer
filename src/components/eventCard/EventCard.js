@@ -1,4 +1,5 @@
 import './EventCard.css';
+import { Link } from 'react-router-dom';
 
 export const EventCard = ({ event }) => {
 
@@ -6,7 +7,9 @@ export const EventCard = ({ event }) => {
     <section key={event.id} className="event-card">
       <dl>
         <dt>Event Name</dt>
+      <Link to={`/event/${event.id}`} key={event.id} >
         <dd>{event.name}</dd>
+      </Link>
 
         <dt>Event Date</dt>
         <dd>{event.eventDatetime}</dd>
