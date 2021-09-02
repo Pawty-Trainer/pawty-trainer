@@ -1,6 +1,6 @@
 import './EventCard.css';
 import { Link } from 'react-router-dom';
-import { useMutation, gql } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { UPDATE_EVENT } from '../../utils/graph_mutations';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries'
 
@@ -16,8 +16,7 @@ export const EventCard = ({ event }) => {
       }
     })
   }
-  console.log(event,'event')
-  
+
   return (
     <section key={event.id} className="event-card">
       <dl>
