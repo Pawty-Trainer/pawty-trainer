@@ -17,10 +17,11 @@ export const Dashboard = ({ userName, dogs, events }) => {
     })
   }
 
-  events.splice(2)
   let eventList = []
   if (events.length) {
-    eventList = events.map(event => {
+    let twoEvents = [...events]
+    twoEvents.splice(2)
+    eventList = twoEvents.map(event => {
       return (
         <Link to={`/event/${event.id}`} key={event.id} >
           <EventCard event={event} />

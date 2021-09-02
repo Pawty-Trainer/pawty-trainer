@@ -1,16 +1,7 @@
 import './Dog.css';
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
-
-const DELETE_DOG = gql`
-  mutation ($id: ID!) {
-    destroyDog(input: {
-      id: $id
-    }) {
-      id
-    }
-  }
-`;
+import { DELETE_DOG } from '../../utils/graph_mutations';
 
 export const Dog = ({ matchingDog, removeDog }) => {
   let history = useHistory()

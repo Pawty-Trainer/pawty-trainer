@@ -1,34 +1,18 @@
 import './Create.css';
 import React, { useState } from 'react';
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+import { ADD_NEW_DOG } from '../../utils/graph_mutations';
+import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 
-const ADD_NEW_DOG = gql`
-  mutation ($name: String!, $userId: Int!, $breed: String!, $age: Int!) {
-    createDog(input: {
-        name: $name,
-        userId: $userId,
-        breed: $breed,
-        age: $age
-  }) {
-      dog {
-        id
-        userId
-        name
-        breed
-        age
-      }
-      errors
-    }
-  }
-`;
-
-const Create = ({userID}) => {
+const Create = ({ userID }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
   //Will eventually use api that backend creates to turn this into a drop down 
-  const [error, setError] = useState('')
-  const [addDog] = useMutation(ADD_NEW_DOG)
+  const [formError, setFormError] = useState('')
+  const [addDog, { loading, error }] = useMutation(ADD_NEW_DOG, {
+    refetchQueries: [QUERY_EVERYTHING]
+  })
 
   const submitDog = event => {
     event.preventDefault();
@@ -41,11 +25,11 @@ const Create = ({userID}) => {
           age: Number(age)
         }
       });
-      clearError()
+      setFormError('')
       clearInputs()
 
     } else {
-      setError('Sorry, you must input all fields before creating a dog!')
+      setFormError('Sorry, you must input all fields before creating a dog!')
     } 
   }
 
@@ -55,9 +39,8 @@ const Create = ({userID}) => {
     setBreed('');
   }
 
-  const clearError = () => {
-    setError('')
-  }
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
   return(
     <form>
@@ -87,7 +70,7 @@ const Create = ({userID}) => {
         required
       />
       <button onClick={event => submitDog(event)}>Create</button>
-      <p>{error}</p>
+      <p>{formError}</p>
     </form>
     
   )
