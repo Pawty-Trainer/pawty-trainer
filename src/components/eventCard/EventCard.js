@@ -1,8 +1,43 @@
 import './EventCard.css';
 import { Link } from 'react-router-dom';
+import { useMutation, gql } from '@apollo/client';
 
+const UPDATE_EVENT = gql`
+  mutation ($eventId: ID!){
+    updateEvent(
+      input: { 
+        id: $eventId, 
+        completed: true 
+      }) {
+        event {
+          id
+          name
+          completed
+          dogId
+            dog {
+              id
+              name
+              breed
+              age
+                user {
+                  name
+                }
+        }
+      }
+    }
+  }
+`
 export const EventCard = ({ event }) => {
+  const [mutateEvent] = useMutation(UPDATE_EVENT)
 
+  const handleClick = () => {
+    mutateEvent({
+      variables: {
+        eventId: event.id
+      }
+    })
+  }
+  console.log(event,'event')
   return (
     <section key={event.id} className="event-card">
       <dl>
@@ -15,10 +50,10 @@ export const EventCard = ({ event }) => {
         <dd>{event.eventDatetime}</dd>
 
         <dt>Dog ID</dt>
-        <dd>{event.dogId}</dd>    
+        <dd>{event.dogId}</dd> 
       </dl>
-      <input type='checkbox' name='complete' value='true'></input>
-        <label for="vehicle1">Complete Event</label><br></br>  
+      <input type='checkbox' id='complete' name='complete' value='true' onClick={() => handleClick()}></input>
+        <label>Complete Event</label><br></br>  
     </section>
   )
 }
