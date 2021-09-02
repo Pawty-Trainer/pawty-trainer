@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pawty-trainer/static/css/main.c86244ca.chunk.css",
-    "main.js": "/pawty-trainer/static/js/main.8a50de15.chunk.js",
-    "main.js.map": "/pawty-trainer/static/js/main.8a50de15.chunk.js.map",
+    "main.js": "/pawty-trainer/static/js/main.3e5d1e6d.chunk.js",
+    "main.js.map": "/pawty-trainer/static/js/main.3e5d1e6d.chunk.js.map",
     "runtime-main.js": "/pawty-trainer/static/js/runtime-main.1e91fe5e.js",
     "runtime-main.js.map": "/pawty-trainer/static/js/runtime-main.1e91fe5e.js.map",
     "static/js/2.84533b8e.chunk.js": "/pawty-trainer/static/js/2.84533b8e.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.1e91fe5e.js",
     "static/js/2.84533b8e.chunk.js",
     "static/css/main.c86244ca.chunk.css",
-    "static/js/main.8a50de15.chunk.js"
+    "static/js/main.3e5d1e6d.chunk.js"
   ]
 }
