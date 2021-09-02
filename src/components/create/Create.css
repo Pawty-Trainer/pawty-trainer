@@ -10,3 +10,7 @@ form {
 input, button {
   margin-bottom: 1vw;
 }
+
+.select {
+  width: 85%;
+}
