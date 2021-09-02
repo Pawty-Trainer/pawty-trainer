@@ -1,34 +1,13 @@
 import './EventCard.css';
 import { Link } from 'react-router-dom';
 import { useMutation, gql } from '@apollo/client';
+import { UPDATE_EVENT } from '../../utils/graph_mutations';
+import { QUERY_EVERYTHING } from '../../utils/graph_queries'
 
-const UPDATE_EVENT = gql`
-  mutation ($eventId: ID!){
-    updateEvent(
-      input: { 
-        id: $eventId, 
-        completed: true 
-      }) {
-        event {
-          id
-          name
-          completed
-          dogId
-            dog {
-              id
-              name
-              breed
-              age
-                user {
-                  name
-                }
-        }
-      }
-    }
-  }
-`
 export const EventCard = ({ event }) => {
-  const [mutateEvent] = useMutation(UPDATE_EVENT)
+  const [mutateEvent] = useMutation(UPDATE_EVENT, {
+    refetchQueries:[QUERY_EVERYTHING]
+  })
 
   const handleClick = () => {
     mutateEvent({
@@ -38,6 +17,7 @@ export const EventCard = ({ event }) => {
     })
   }
   console.log(event,'event')
+  
   return (
     <section key={event.id} className="event-card">
       <dl>

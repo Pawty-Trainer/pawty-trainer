@@ -49,3 +49,29 @@ export const ADD_NEW_EVENT = gql`
     }
   }
 `;
+
+export const UPDATE_EVENT = gql`
+  mutation ($eventId: ID!){
+    updateEvent(
+      input: { 
+        id: $eventId, 
+        completed: true 
+      }) {
+        event {
+          id
+          name
+          completed
+          dogId
+            dog {
+              id
+              name
+              breed
+              age
+                user {
+                  name
+                }
+        }
+      }
+    }
+  }
+`
