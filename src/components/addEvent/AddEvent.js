@@ -1,41 +1,21 @@
 import './AddEvent.css';
 import { useState } from 'react';
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+import { ADD_NEW_EVENT } from '../../utils/graph_mutations';
+import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 
-const ADD_NEW_EVENT = gql`
-  mutation ($name: String!, $dogId: Int!, $eventDatetime: ISO8601DateTime!){
-    createEvent(input: {
-      name: $name,
-      dogId: $dogId,
-      completed: false,
-      eventDatetime: $eventDatetime,  
-  }) {
-      event {
-        id
-        dogId
-        name
-        completed
-        eventDatetime
-      }
-      errors
-    }
-  }
-  `;
-
-export const AddEvent = ({dogs}) => {
+export const AddEvent = ({ dogs }) => {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [dogId, setDogId] = useState(0)
-  const [error, setError] = useState('');
-  const [addNewEvent] = useMutation(ADD_NEW_EVENT)
+  const [formError, setFormError] = useState('');
+  const [addNewEvent, { loading, error }] = useMutation(ADD_NEW_EVENT, {
+    refetchQueries: [QUERY_EVERYTHING]
+  })
 
-  // {
-  //   refetchQueries: []
-  // })
-
-  const submitEvent = event => {
+  const submitEvent = (event) => {
     event.preventDefault();
-    if(eventName && eventDate) {
+    if(eventName && eventDate && dogId) {
     addNewEvent({
       variables: {
         dogId: Number(dogId),
@@ -43,20 +23,20 @@ export const AddEvent = ({dogs}) => {
         eventDatetime: eventDate
       }
     })
-     clearError()
-     clearInputs()
+    setFormError('')
+    clearInputs()
     } else {
-      setError('Sorry, you must input all fields before creating an event!')
+      setFormError('Sorry, you must input all fields before creating an event!')
     }
   }
   const clearInputs = () => {
     setEventName('');
     setEventDate('');
+    setDogId(0);
   }
-  
-  const clearError = () => {
-    setError('')
-  }
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
   return (
     <>
@@ -71,6 +51,12 @@ export const AddEvent = ({dogs}) => {
         />
         <label>Select dog:</label>
         <select onChange={(event)=> setDogId(event.target.value)}>
+          <option 
+            placeholder='Dog Name'
+            key={dogId} 
+            value={dogId}
+          >Dog Name
+          </option>
           {dogs.map(dog => (
             <option 
               key={dog.id} 
@@ -89,7 +75,7 @@ export const AddEvent = ({dogs}) => {
           required
         />
         <button onClick={event=> submitEvent(event)}>Submit</button>
-        <p>{error}</p>
+        <p>{formError}</p>
       </form> 
     </>
   )

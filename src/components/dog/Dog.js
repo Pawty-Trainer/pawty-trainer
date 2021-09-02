@@ -1,20 +1,11 @@
 import './Dog.css';
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
-
-const DELETE_DOG = gql`
-  mutation ($id: ID!) {
-    destroyDog(input: {
-      id: $id
-    }) {
-      id
-    }
-  }
-`;
+import { DELETE_DOG } from '../../utils/graph_mutations';
 
 export const Dog = ({ matchingDog, removeDog }) => {
   let history = useHistory()
-  const [deleteDog] = useMutation(DELETE_DOG)
+  const [deleteDog, { loading, error }] = useMutation(DELETE_DOG)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -26,6 +17,9 @@ export const Dog = ({ matchingDog, removeDog }) => {
     removeDog(matchingDog)
     history.push("/")
   }
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
   return (
     <section className="dog-details">
