@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import { Header } from '../header/Header';
@@ -10,44 +10,21 @@ import { Calendar } from '../calendar/Calendar'
 import { Event } from '../event/Event'
 import { Dog } from '../dog/Dog'
 import Create from '../create/Create';
+import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 
 export const App = () => {
-  const [userID, setUserID] = useState(0);
+  const { loading, error, data } = useQuery(QUERY_EVERYTHING)
+  const [user, setUser] = useState({});
   const [dogs, setDogs] = useState([]);
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    setUserID(1)
-  }, [])
-
-  const { loading, error, data } = useQuery(gql`
-    query {
-      user(id: ${userID}) {
-        id
-        name
-      } dogs {
-        id
-        name
-        breed
-        age
-      } events {
-        id
-        name
-        completed
-        eventDatetime
-        dogId
-          dog {
-            name
-            breed
-            age
-            userId
-            user {
-              name
-          }
-        }
-      }
+    if (!loading && data) {
+      setUser(data.user)
+      setDogs(data.dogs)
+      setEvents(sortEvents(data.events))
     }
-  `);
+  }, [data, loading])
 
   const removeDog = (dogObject) => {
     let currentDogs = [...dogs]
@@ -81,13 +58,13 @@ export const App = () => {
     })
   }
 
-  if (data.dogs.length && !dogs.length) {
-    setDogs(data.dogs)
-  }
+  // if (data.dogs.length && !dogs.length) {
+  //   setDogs(data.dogs)
+  // }
 
-  if (data.events.length && !events.length) {
-    setEvents(sortEvents(data.events))
-  }
+  // if (data.events.length && !events.length) {
+  //   setEvents(sortEvents(data.events))
+  // }
 
   if (data) {
     return (
@@ -96,15 +73,15 @@ export const App = () => {
         <main>
           <Switch>
             <Route exact path='/' render={() =>
-              <Dashboard userName={data.user.name} dogs={dogs} events={events} /> 
+              <Dashboard userName={user.name} dogs={dogs} events={events} /> 
             }/>
 
             <Route path='/create'>
-              <Create userID={userID} />
+              <Create userID={1} />
             </Route>
 
             <Route path='/add_event'>
-              <AddEvent dogs={dogs}/>
+              <AddEvent dogs={dogs} />
             </Route>
 
             <Route path='/calendar'>
