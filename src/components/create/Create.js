@@ -69,16 +69,16 @@ const Create = ({ userID, breeds }) => {
         onChange={(event)=> setBreed(event.target.value)}
         required
       /> */}
-      {/* <select>
-        {Object.entries(breeds)(breed => (
+      <select>
+        {breeds.map(breed => (
           <option
-            key={breed}
-            value={breed}
+            key={breed.name}
+            value={breed.name}
           >
-            {breed}
+            {breed.name}
           </option>
         ))}
-      </select> */}
+      </select>
       <button onClick={event => submitDog(event)}>Create</button>
       <p>{formError}</p>
     </form>
