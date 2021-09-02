@@ -12,8 +12,10 @@ export const EventCard = ({ event }) => {
         <dd>{event.eventDatetime}</dd>
 
         <dt>Dog ID</dt>
-        <dd>{event.dogId}</dd>
+        <dd>{event.dogId}</dd>    
       </dl>
+      <input type='checkbox' name='complete' value='true'></input>
+        <label for="vehicle1">Complete Event</label><br></br>  
     </section>
   )
 }

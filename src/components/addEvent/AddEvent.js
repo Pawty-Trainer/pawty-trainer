@@ -29,10 +29,6 @@ export const AddEvent = ({dogs}) => {
   const [error, setError] = useState('');
   const [addNewEvent] = useMutation(ADD_NEW_EVENT)
 
-  // {
-  //   refetchQueries: []
-  // })
-
   const submitEvent = event => {
     event.preventDefault();
     if(eventName && eventDate) {
