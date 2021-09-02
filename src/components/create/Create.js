@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_NEW_DOG } from '../../utils/graph_mutations';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 
-const Create = ({ userID }) => {
+const Create = ({ userID, breeds }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
@@ -53,7 +53,7 @@ const Create = ({ userID }) => {
         onChange={(event)=> setName(event.target.value)}
         required
       />
-       <input
+      <input
         type='number'
         placeholder='Age'
         name = 'age'
@@ -61,14 +61,24 @@ const Create = ({ userID }) => {
         onChange={(event)=> setAge(event.target.value)}
         required
       />
-      <input
+      {/* <input
         type='text'
         placeholder='Breed'
         name = 'breed'
         value= {breed}
         onChange={(event)=> setBreed(event.target.value)}
         required
-      />
+      /> */}
+      {/* <select>
+        {Object.entries(breeds)(breed => (
+          <option
+            key={breed}
+            value={breed}
+          >
+            {breed}
+          </option>
+        ))}
+      </select> */}
       <button onClick={event => submitDog(event)}>Create</button>
       <p>{formError}</p>
     </form>
