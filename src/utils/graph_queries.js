@@ -12,9 +12,19 @@ export const QUERY_EVERYTHING = gql`
       age
     } events {
       id
-      dogId
       name
+      completed
       eventDatetime
+      dogId
+        dog {
+          name
+          breed
+          age
+          userId
+          user {
+            name
+        }
+      }
     }
   }
 `;

@@ -1,5 +1,4 @@
 import './Calendar.css';
-import { Link } from 'react-router-dom'
 import { EventCard } from '../eventCard/EventCard'
 
 export const Calendar = ({ events }) => {
@@ -8,9 +7,7 @@ export const Calendar = ({ events }) => {
   if (events.length) {
     eventList = events.map(event => {
       return (
-        <Link to={`/event/${event.id}`} key={event.id} >
           <EventCard event={event} />
-        </Link>
       )
     })
   }
