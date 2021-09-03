@@ -4,7 +4,6 @@ import { useMutation } from "@apollo/client";
 import { ADD_NEW_DOG } from '../../utils/graph_mutations';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 import Select from 'react-select'
-import { fetchBreeds } from '../../utils/apiCalls';
 
 const Create = ({ userID, breeds }) => {
   const [name, setName] = useState('');
@@ -44,6 +43,9 @@ const Create = ({ userID, breeds }) => {
   if (error) return `Submission error! ${error.message}`;
 
   const options = breeds.map(breed=> ({label: breed.name, value: breed.name}))
+  console.log('options', options)
+  const allOptions = options.push({label:'Mixed', value:'Mixed'})
+  console.log(allOptions, 'allOptions')
 
   return(
     <form>
@@ -66,7 +68,6 @@ const Create = ({ userID, breeds }) => {
       />
       <label>Select Breed:</label>
       <Select className='select'
-        // onChange={(breed)=> setBreed(breed.target.value)}
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />
