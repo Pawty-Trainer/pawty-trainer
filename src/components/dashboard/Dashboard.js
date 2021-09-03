@@ -8,10 +8,10 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
   if (dogs.length) {
     dogList = dogs.map(dog => {
       return (
-        <li key={dog.id}>
+        <li classname='dog-name-list-container'key={dog.id}>
           <img className='bone'src={bone} />
           <Link to={`/dog/${dog.id}`}>
-            {dog.name}
+              {dog.name}
           </Link>
         </li>
       )

@@ -21,5 +21,8 @@ li {
 
 .bone {
   width: 5vh;
-  color: white;
+}
+
+.dog-list-name-container {
+  display: inline-block;
 }

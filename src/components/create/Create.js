@@ -46,7 +46,7 @@ const Create = ({ userID, breeds }) => {
  options.push({label:'Mixed', value:'Mixed'})
 
   return(
-    <form>
+    <form className='add-dog'>
       <h1 className='train-dog-title'>Train your dog!</h1>
       <input
         type='text'
