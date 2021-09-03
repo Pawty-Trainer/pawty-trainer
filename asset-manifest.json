@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/pawty-trainer/static/css/main.95969fc7.chunk.css",
-    "main.js": "/pawty-trainer/static/js/main.e06e21e4.chunk.js",
-    "main.js.map": "/pawty-trainer/static/js/main.e06e21e4.chunk.js.map",
+    "main.js": "/pawty-trainer/static/js/main.ebae1cb4.chunk.js",
+    "main.js.map": "/pawty-trainer/static/js/main.ebae1cb4.chunk.js.map",
     "runtime-main.js": "/pawty-trainer/static/js/runtime-main.1e91fe5e.js",
     "runtime-main.js.map": "/pawty-trainer/static/js/runtime-main.1e91fe5e.js.map",
-    "static/js/2.18fc30a4.chunk.js": "/pawty-trainer/static/js/2.18fc30a4.chunk.js",
-    "static/js/2.18fc30a4.chunk.js.map": "/pawty-trainer/static/js/2.18fc30a4.chunk.js.map",
+    "static/js/2.9698a73c.chunk.js": "/pawty-trainer/static/js/2.9698a73c.chunk.js",
+    "static/js/2.9698a73c.chunk.js.map": "/pawty-trainer/static/js/2.9698a73c.chunk.js.map",
     "index.html": "/pawty-trainer/index.html",
     "static/css/main.95969fc7.chunk.css.map": "/pawty-trainer/static/css/main.95969fc7.chunk.css.map",
-    "static/js/2.18fc30a4.chunk.js.LICENSE.txt": "/pawty-trainer/static/js/2.18fc30a4.chunk.js.LICENSE.txt"
+    "static/js/2.9698a73c.chunk.js.LICENSE.txt": "/pawty-trainer/static/js/2.9698a73c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1e91fe5e.js",
-    "static/js/2.18fc30a4.chunk.js",
+    "static/js/2.9698a73c.chunk.js",
     "static/css/main.95969fc7.chunk.css",
-    "static/js/main.e06e21e4.chunk.js"
+    "static/js/main.ebae1cb4.chunk.js"
   ]
 }
