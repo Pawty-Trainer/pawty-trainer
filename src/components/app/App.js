@@ -18,6 +18,7 @@ export const App = () => {
   const [user, setUser] = useState({});
   const [dogs, setDogs] = useState([]);
   const [events, setEvents] = useState([]);
+  const [completedEvents, setCompletedEvents] = useState(0);
   const [breeds, setBreeds] = useState([])
 
   useEffect(() => {
@@ -28,7 +29,10 @@ export const App = () => {
     if (!loading && data) {
       setUser(data.user)
       setDogs(data.dogs)
-      setEvents(sortEvents(data.events))
+      let sortedEvents = sortEvents(data.events)
+      let filteredEvents = filterEvents(sortedEvents)
+      setEvents(filteredEvents.outstanding)
+      setCompletedEvents(filteredEvents.completed.length)
     }
   }, [data, loading])
 
@@ -64,13 +68,24 @@ export const App = () => {
     })
   }
 
-  // if (data.dogs.length && !dogs.length) {
-  //   setDogs(data.dogs)
-  // }
-
-  // if (data.events.length && !events.length) {
-  //   setEvents(sortEvents(data.events))
-  // }
+  const filterEvents = (events) => {
+    let today = new Date()
+    let spreadArray = [...events]
+    return spreadArray.reduce((newObj, currentEvent) => {
+      if (!newObj.completed) {
+        newObj.completed = []
+        newObj.outstanding = []
+      }
+      if (currentEvent.completed) {
+        newObj.completed = [...newObj.completed, currentEvent]
+      }
+      if (!currentEvent.completed &&
+        new Date(currentEvent.eventDatetime) >= today) {
+        newObj.outstanding = [...newObj.outstanding, currentEvent]
+      }
+      return newObj
+    }, {})
+  }
 
   if (data) {
     return (
@@ -79,7 +94,12 @@ export const App = () => {
         <main>
           <Switch>
             <Route exact path='/' render={() =>
-              <Dashboard userName={user.name} dogs={dogs} events={events} /> 
+              <Dashboard
+                userName={user.name}
+                dogs={dogs}
+                events={events}
+                completedEvents={completedEvents}
+              /> 
             }/>
 
             <Route path='/create'>

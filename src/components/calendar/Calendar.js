@@ -7,7 +7,7 @@ export const Calendar = ({ events }) => {
   if (events.length) {
     eventList = events.map(event => {
       return (
-          <EventCard event={event} />
+        <EventCard event={event} key={event.id} />
       )
     })
   }
