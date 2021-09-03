@@ -1,6 +1,7 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom'
 import { EventCard } from '../eventCard/EventCard'
+import  bone from '../../resources/bone.png'
 
 export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
   let dogList = []
@@ -8,6 +9,7 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     dogList = dogs.map(dog => {
       return (
         <li key={dog.id}>
+          <img className='bone'src={bone} />
           <Link to={`/dog/${dog.id}`}>
             {dog.name}
           </Link>

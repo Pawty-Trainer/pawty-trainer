@@ -8,11 +8,11 @@
   content: ":";
 }
 
-.event-card > dl > dd {
-  margin: 0 0 0 150px;
-  display: flex;
-  align-items: flex-start;
-}
+/* .event-card > dl > dd {
+  margin: 0 0 0 150px; */
+  /* display: flex; */
+  /* align-items: flex-start; */
+/* } */
 
 .event-card {
   margin: 3rem;
@@ -26,6 +26,10 @@
   margin: 1vh;
 }
 
-.card-title {
+.dog-name {
   font-size: 3vh;
+}
+
+.event-date {
+  margin: 0pc;
 }
