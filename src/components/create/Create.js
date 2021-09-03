@@ -42,7 +42,7 @@ const Create = ({ userID, breeds }) => {
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;
 
-  const options = breeds.map(breed=> ({label: breed.name, value: breed.name}))
+  const options = breeds.map(breed => ({label: breed.name, value: breed.name}))
  options.push({label:'Mixed', value:'Mixed'})
 
   return(
@@ -56,6 +56,7 @@ const Create = ({ userID, breeds }) => {
         onChange={(event)=> setName(event.target.value)}
         required
       />
+      {/* Put a min for the age */}
       <input
         type='number'
         placeholder='Age'
