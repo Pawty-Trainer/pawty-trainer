@@ -5,6 +5,7 @@
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   text-align: center;
+  color: white;
 }
 
 /* html {
@@ -14,22 +15,23 @@
 body {
   display: flex;
   flex-direction: column;
+  background-color: #C7AC92;
 }
 
 a:link {
-  color: black;
+  color: white;
 }
 
 a:visited {
-  color: black;
+  color: white;
 }
 
 a:hover {
-  color: yellow;
+  color: #D4E09B;
 }
 
 a:active {
-  color: red;
+  color: #D4E09B;
 }
 
 main {
