@@ -2,8 +2,7 @@ import './Dashboard.css';
 import { Link } from 'react-router-dom'
 import { EventCard } from '../eventCard/EventCard'
 
-export const Dashboard = ({ userName, dogs, events }) => {
-
+export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
   let dogList = []
   if (dogs.length) {
     dogList = dogs.map(dog => {
@@ -23,17 +22,26 @@ export const Dashboard = ({ userName, dogs, events }) => {
     twoEvents.splice(2)
     eventList = twoEvents.map(event => {
       return (
-        <Link to={`/event/${event.id}`} key={event.id} >
-          <EventCard event={event} />
-        </Link>
+        <EventCard event={event} key={event.id} />
       )
     })
+  }
+
+  let rewards = []
+  if (completedEvents) {
+    rewards = ["★"]
+    for (var i = 1; i < completedEvents; i++) {
+      if (!(i % 3)) {
+        rewards = [...rewards, "★"];
+      }
+    }
   }
 
   if (dogs.length && events.length) {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
+        <p>{rewards}</p>
   
         <section>
 

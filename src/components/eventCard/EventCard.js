@@ -20,19 +20,19 @@ export const EventCard = ({ event }) => {
   return (
     <section key={event.id} className="event-card">
       <dl>
+        <dt>Dog</dt>
+        <dd>{event.dog.name}</dd>
+
         <dt>Event Name</dt>
-      <Link to={`/event/${event.id}`} key={event.id} >
-        <dd>{event.name}</dd>
-      </Link>
+        <dd>
+          <Link to={`/event/${event.id}`} key={event.id} >{event.name}</Link>
+        </dd>
 
         <dt>Event Date</dt>
-        <dd>{event.eventDatetime}</dd>
-
-        <dt>Dog ID</dt>
-        <dd>{event.dogId}</dd> 
+        <dd>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
       </dl>
       <input type='checkbox' id='complete' name='complete' value='true' onClick={() => handleClick()}></input>
-        <label>Complete Event</label><br></br>  
+        <label>Complete Event</label>
     </section>
   )
 }
