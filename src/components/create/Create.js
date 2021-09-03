@@ -43,9 +43,7 @@ const Create = ({ userID, breeds }) => {
   if (error) return `Submission error! ${error.message}`;
 
   const options = breeds.map(breed=> ({label: breed.name, value: breed.name}))
-  console.log('options', options)
   const allOptions = options.push({label:'Mixed', value:'Mixed'})
-  console.log(allOptions, 'allOptions')
 
   return(
     <form>
@@ -71,25 +69,6 @@ const Create = ({ userID, breeds }) => {
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />
-        {/* <option 
-          placeholder='Dog Breed' 
-          value='Dog Breed'
-          >Dog Breed
-        </option>
-        <option 
-          value='Mixed'
-          >Mixed Breed
-        </option>
-        {breeds.map(breed => (
-          <option
-            label={breed.id}
-            value={breed.name}
-          >
-            {breed.name}
-          </option>
-        ))} */}
-        
-      {/* </Select> */}
       <button onClick={event => submitDog(event)}>Create</button>
       <p>{formError}</p>
     </form>
