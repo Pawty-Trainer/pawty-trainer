@@ -23,9 +23,9 @@ export const EventCard = ({ event }) => {
         <div className='description-container'>
           <dd className="dog-name">{event.dog.name}</dd>
         </div>
-        <div className='description-container'>
-          <dd>
-            <Link to={`/event/${event.id}`} key={event.id} >{event.name}</Link>
+        <div >
+          <dd className='description-container'>
+            <Link to={`/event/${event.id}`} key={event.id}><em>{event.name}</em></Link>
           </dd>
         </div>
           <dt className='card-title event-date'>To be completed by</dt>

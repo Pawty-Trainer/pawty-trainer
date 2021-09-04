@@ -13,3 +13,10 @@
   display: flex;
   align-items: flex-start;
 }
+
+.event {
+  color: white;
+  background-color: #94A89A;
+  padding: 3.5vh;
+  border-radius: 8px;
+}

@@ -9,10 +9,21 @@ header {
 }
 
 nav > a {
-  font-size: xx-large;
+  font-size: 1.5em;
   text-decoration: none;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   padding-bottom: 0.3rem;
   margin: 0 2rem;
+}
+
+.title {
+  color: #A44A3F;
+  font-size: 3.5em;
+}
+
+.selected-link {
+  color: #D4E09B;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
 }

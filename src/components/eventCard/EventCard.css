@@ -21,6 +21,7 @@
   padding: 3.5vh;
   width: 50vh;
   box-shadow: 10px 10px 0px #D4E09B;
+  color: white;
 }
 
 .complete-title {
@@ -28,9 +29,15 @@
 }
 
 .dog-name {
-  font-size: 3vh;
+  font-size: 3.5vh;
+  font-weight: bolder;
+  border-bottom: solid white;
 }
 
 .event-date {
   margin: 0pc;
+}
+
+.event-description {
+  color: #A44A3F;
 }
