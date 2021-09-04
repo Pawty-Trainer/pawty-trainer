@@ -43,7 +43,7 @@ const Create = ({ userID, breeds }) => {
   if (error) return `Submission error! ${error.message}`;
 
   const options = breeds.map(breed => ({label: breed.name, value: breed.name}))
- options.push({label:'Mixed', value:'Mixed'})
+  options.push({label:'Mixed', value:'Mixed'})
 
   return(
     <form>
