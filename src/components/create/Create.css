@@ -34,7 +34,7 @@ button:hover {
   background-color: #A44A3F;
 }
 
-.text {
+.text, p {
   color: white;
 }
 
