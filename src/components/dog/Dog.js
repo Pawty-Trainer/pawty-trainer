@@ -24,9 +24,6 @@ export const Dog = ({ matchingDog, removeDog }) => {
   return (
     <section className="dog-details">
       <dl>
-        <dt>Dog ID</dt>
-        <dd>{matchingDog.id}</dd>
-
         <dt>Dog Name</dt>
         <dd>{matchingDog.name}</dd>
 
