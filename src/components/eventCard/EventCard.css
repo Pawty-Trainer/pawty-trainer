@@ -9,12 +9,35 @@
 }
 
 .event-card > dl > dd {
-  margin: 0 0 0 150px;
+  margin: 0 0 0 150px; 
   display: flex;
   align-items: flex-start;
-}
+ }
 
 .event-card {
   margin: 3rem;
-  border:  5px solid red;
+  border-radius: 10px;
+  background-color: #94A89A;
+  padding: 3.5vh;
+  width: 50vh;
+  box-shadow: 10px 10px 0px #D4E09B;
+  color: white;
+}
+
+.complete-title {
+  margin: 1vh;
+}
+
+.dog-name {
+  font-size: 3.5vh;
+  font-weight: bolder;
+  border-bottom: solid white;
+}
+
+.event-date {
+  margin: 0pc;
+}
+
+.event-description {
+  color: #A44A3F;
 }

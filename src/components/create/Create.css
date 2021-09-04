@@ -3,8 +3,12 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 2px solid black;
-  width:  25vw;
+  margin: 3rem;
+  border-radius: 10px;
+  background-color: #94A89A;
+  padding: 3.5vh;
+  width: 50vh;
+  box-shadow: 20px 20px 0px #D4E09B;
 }
 
 input, button {
@@ -12,5 +16,31 @@ input, button {
 }
 
 .select {
-  width: 85%;
+  width: 65%;
 }
+
+button {
+  width: 15vh;
+  height: 5vh;
+  margin-top: 2vh;
+  margin-bottom: 0;
+  border-radius: 5px;
+  border: none;
+  background-color: #C7AC92;
+  color: white;
+}
+
+button:hover {
+  cursor:pointer;
+  background-color: #A44A3F;
+}
+
+.text {
+  color: white;
+}
+
+p {
+  color: #A44A3F;
+}
+
+

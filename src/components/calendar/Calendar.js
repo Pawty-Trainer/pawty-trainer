@@ -15,14 +15,14 @@ export const Calendar = ({ events }) => {
   if (events.length) {
     return (
       <section className="calendar">
-        <h2>Calendar!</h2>
+        <h2>Calendar</h2>
         <section>{eventList}</section>
       </section>
     )
   } else {
     return (
       <section className="calendar">
-        <h2>Calendar!</h2>
+        <h2>Calendar</h2>
         <p>You have no events scheduled.</p>
       </section>
     )

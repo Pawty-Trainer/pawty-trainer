@@ -2,7 +2,7 @@ import './EventCard.css';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { UPDATE_EVENT } from '../../utils/graph_mutations';
-import { QUERY_EVERYTHING } from '../../utils/graph_queries'
+import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 
 export const EventCard = ({ event }) => {
   const [mutateEvent] = useMutation(UPDATE_EVENT, {
@@ -20,19 +20,19 @@ export const EventCard = ({ event }) => {
   return (
     <section key={event.id} className="event-card">
       <dl>
-        <dt>Dog</dt>
-        <dd>{event.dog.name}</dd>
-
-        <dt>Event Name</dt>
-        <dd>
-          <Link to={`/event/${event.id}`} key={event.id} >{event.name}</Link>
-        </dd>
-
-        <dt>Event Date</dt>
-        <dd>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
+        <div className='description-container'>
+          <dd className="dog-name">{event.dog.name}</dd>
+        </div>
+        <div >
+          <dd className='description-container'>
+            <Link to={`/event/${event.id}`} key={event.id}><em>{event.name}</em></Link>
+          </dd>
+        </div>
+          <dt className='card-title event-date'>To be completed by</dt>
+          <dd>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
       </dl>
       <input type='checkbox' id='complete' name='complete' value='true' onClick={() => handleClick()}></input>
-        <label>Complete Event</label>
+        <label className='complete-title' >Complete Event</label>
     </section>
   )
 }

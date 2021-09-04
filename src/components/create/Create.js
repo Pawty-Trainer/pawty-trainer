@@ -46,8 +46,8 @@ const Create = ({ userID, breeds }) => {
   options.push({label:'Mixed', value:'Mixed'})
 
   return(
-    <form>
-      <h1 className='train-dog-title'>Train your dog!</h1>
+    <form className='add-dog'>
+      <h2 className='train-dog-title text'>Train your dog!</h2>
       <input
         type='text'
         placeholder='Name'
@@ -56,17 +56,18 @@ const Create = ({ userID, breeds }) => {
         onChange={(event)=> setName(event.target.value)}
         required
       />
-      {/* Put a min for the age */}
       <input
         type='number'
         placeholder='Age'
         name = 'age'
+        min='0'
         value= {age}
         onChange={(event)=> setAge(event.target.value)}
         required
       />
-      <label>Select Breed:</label>
-      <Select className='select'
+      <label className='text'>Select Breed:</label>
+      <Select
+        className='select'
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />

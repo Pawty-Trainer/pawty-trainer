@@ -7,33 +7,29 @@
   text-align: center;
 }
 
-/* html {
-  min-height: 100vh;
-} */
-
 body {
   display: flex;
   flex-direction: column;
+  background-color: #C7AC92;
 }
 
 a:link {
-  color: black;
-}
+  color: white;
+} 
 
 a:visited {
-  color: black;
-}
+  color: white;
+} 
 
 a:hover {
-  color: yellow;
+  color: #D4E09B;
 }
 
 a:active {
-  color: red;
+  color: #D4E09B;
 }
 
 main {
   display: flex;
   justify-content: center;
-  padding: 2rem;
 }

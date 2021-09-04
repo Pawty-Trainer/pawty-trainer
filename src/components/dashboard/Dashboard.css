@@ -1,6 +1,7 @@
 .dashboard {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .dashboard > h2 {
@@ -17,4 +18,18 @@
 
 li {
   list-style-type: none;
+}
+
+.material-icons {
+  font-size: 1.7em;
+}
+
+.section-titles {
+  font-size: 2em;
+}
+
+
+.my-dogs {
+  border-right: solid white;
+  margin-right: 30vh;
 }
