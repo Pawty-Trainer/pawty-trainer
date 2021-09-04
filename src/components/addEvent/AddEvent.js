@@ -41,7 +41,7 @@ export const AddEvent = ({ dogs }) => {
   return (
     <>
       <form>
-        <h1 className='text'>Add New Event</h1>
+        <h2 className='text'>Add New Event</h2>
         <input
           type='text'
           placeholder='Event Name'

@@ -1,7 +1,6 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom'
 import { EventCard } from '../eventCard/EventCard'
-import  bone from '../../resources/bone.png'
 
 export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
   let dogList = []

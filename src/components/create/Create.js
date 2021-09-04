@@ -47,7 +47,7 @@ const Create = ({ userID, breeds }) => {
 
   return(
     <form className='add-dog'>
-      <h1 className='train-dog-title text'>Train your dog!</h1>
+      <h2 className='train-dog-title text'>Train your dog!</h2>
       <input
         type='text'
         placeholder='Name'
