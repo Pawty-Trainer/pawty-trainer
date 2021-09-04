@@ -5,12 +5,7 @@
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   text-align: center;
-  color: white;
 }
-
-/* html {
-  min-height: 100vh;
-} */
 
 body {
   display: flex;

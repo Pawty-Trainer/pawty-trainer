@@ -47,7 +47,7 @@ const Create = ({ userID, breeds }) => {
 
   return(
     <form className='add-dog'>
-      <h1 className='train-dog-title'>Train your dog!</h1>
+      <h1 className='train-dog-title text'>Train your dog!</h1>
       <input
         type='text'
         placeholder='Name'
@@ -65,8 +65,9 @@ const Create = ({ userID, breeds }) => {
         onChange={(event)=> setAge(event.target.value)}
         required
       />
-      <label>Select Breed:</label>
-      <Select className='select'
+      <label className='text'>Select Breed:</label>
+      <Select
+        className='select'
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />

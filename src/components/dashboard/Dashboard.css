@@ -1,6 +1,7 @@
 .dashboard {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .dashboard > h2 {

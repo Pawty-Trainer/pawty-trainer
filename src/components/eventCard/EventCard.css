@@ -8,11 +8,11 @@
   content: ":";
 }
 
-/* .event-card > dl > dd {
-  margin: 0 0 0 150px; */
-  /* display: flex; */
-  /* align-items: flex-start; */
-/* } */
+.event-card > dl > dd {
+  margin: 0 0 0 150px; 
+  display: flex;
+  align-items: flex-start;
+ }
 
 .event-card {
   margin: 3rem;
@@ -20,6 +20,7 @@
   background-color: #94A89A;
   padding: 3.5vh;
   width: 50vh;
+  box-shadow: 10px 10px 0px #D4E09B;
 }
 
 .complete-title {
