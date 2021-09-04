@@ -27,3 +27,13 @@ li {
 .dog-list-name-container {
   display: inline-block;
 }
+
+.section-titles {
+  font-size: 2em;
+}
+
+
+.my-dogs {
+  border-right: solid white;
+  margin-right: 30vh;
+}

@@ -27,3 +27,12 @@ nav > a {
   border-bottom: 2px solid white;
   border-top: 2px solid white;
 }
+
+.header-container {
+  display: flex;
+}
+
+.material-icons {
+  font-size: 2em;
+  padding-bottom: 0;
+}

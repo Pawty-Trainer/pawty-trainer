@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 export const Header = () => {
   return (
     <header>
-      <h1 className='title'>Pawty Trainer</h1>
+      <section className='header-container'>
+        <h1 className='title'>Pawty Trainer</h1>
+        <p className='material-icons'>pets</p>
+      </section>
       <nav>
         <Link 
           to ='/'

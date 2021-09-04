@@ -44,21 +44,17 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
         <p>{rewards}</p>
-  
-        <section>
-
-          <section>
-            <h3>My Dogs</h3>
+        <section className='sections'>
+          <section className='my-dogs'>
+            <h3 className='section-titles'>My Dogs</h3>
             <ul>
               {dogList}
             </ul>
           </section>
-  
-          <section>
-            <h3>Upcoming Events</h3>
+          <section className='Upcoming'>
+            <h3 className='section-titles'>Upcoming Events</h3>
             {eventList}
           </section>
-
         </section>
       </section>
     )
