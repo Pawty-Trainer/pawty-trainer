@@ -56,11 +56,11 @@ const Create = ({ userID, breeds }) => {
         onChange={(event)=> setName(event.target.value)}
         required
       />
-      {/* Put a min for the age */}
       <input
         type='number'
         placeholder='Age'
         name = 'age'
+        min='0'
         value= {age}
         onChange={(event)=> setAge(event.target.value)}
         required
