@@ -6,7 +6,7 @@ export const Header = () => {
     <header>
       <section className='header-container'>
         <h1 className='title'>Pawty Trainer</h1>
-        <p className='material-icons'>pets</p>
+        {/* <p className='material-icons'>pets</p> */}
       </section>
       <nav>
         <Link 

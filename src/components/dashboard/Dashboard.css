@@ -20,12 +20,8 @@ li {
   list-style-type: none;
 }
 
-.bone {
-  width: 5vh;
-}
-
-.dog-list-name-container {
-  display: inline-block;
+.material-icons {
+  font-size: 1.7em;
 }
 
 .section-titles {

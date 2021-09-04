@@ -9,7 +9,7 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     dogList = dogs.map(dog => {
       return (
         <li className='dog-name-list-container'key={dog.id}>
-          <img className='bone'src={bone} alt='bone' />
+          <p className='material-icons'>pets</p>
           <Link to={`/dog/${dog.id}`}>
               {dog.name}
           </Link>
