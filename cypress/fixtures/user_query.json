@@ -1,0 +1,120 @@
+{
+  "data": {
+    "user": {
+      "id": "1",
+      "name": "Frodo"
+    },
+    "dogs": [
+      {
+        "id": "1",
+        "name": "Gandolf",
+        "breed": "Wizard",
+        "age": 100
+      },
+      {
+        "id": "2",
+        "name": "Legolas",
+        "breed": "Elf",
+        "age": 20
+      }
+    ],
+    "events": [
+      {
+        "id": "6",
+        "name": "worst ending ever",
+        "completed": false,
+        "eventDatetime": "2022-08-27T20:10:00Z",
+        "dogId": 2,
+        "dog": {
+          "name": "Legolas",
+          "breed": "Elf",
+          "age": 20,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      },
+      {
+        "id": "1",
+        "name": "journey to Mount Doom",
+        "completed": false,
+        "eventDatetime": "2022-01-27T21:20:00Z",
+        "dogId": 1,
+        "dog": {
+          "name": "Gandolf",
+          "breed": "Wizard",
+          "age": 100,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      },
+      {
+        "id": "2",
+        "name": "Gandalf frees Théoden",
+        "completed": true,
+        "eventDatetime": "2021-02-27T22:30:00Z",
+        "dogId": 2,
+        "dog": {
+          "name": "Legolas",
+          "breed": "Elf",
+          "age": 20,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      },
+      {
+        "id": "3",
+        "name": "Ents storm Isengard",
+        "completed": false,
+        "eventDatetime": "2022-03-27T23:40:00Z",
+        "dogId": 1,
+        "dog": {
+          "name": "Gandolf",
+          "breed": "Wizard",
+          "age": 100,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      },
+      {
+        "id": "5",
+        "name": "march upon the Black Gate",
+        "completed": false,
+        "eventDatetime": "2022-05-27T01:50:00Z",
+        "dogId": 1,
+        "dog": {
+          "name": "Gandolf",
+          "breed": "Wizard",
+          "age": 100,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      },
+      {
+        "id": "4",
+        "name": "battle for Helm's Deep",
+        "completed": false,
+        "eventDatetime": "2022-04-27T02:15:00Z",
+        "dogId": 2,
+        "dog": {
+          "name": "Legolas",
+          "breed": "Elf",
+          "age": 20,
+          "userId": 1,
+          "user": {
+            "name": "Frodo"
+          }
+        }
+      }
+    ]
+  }
+}
