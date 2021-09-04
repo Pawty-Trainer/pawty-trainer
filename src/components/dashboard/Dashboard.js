@@ -7,10 +7,10 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
   if (dogs.length) {
     dogList = dogs.map(dog => {
       return (
-        <li className='dog-name-list-container'key={dog.id}>
+        <li className='dog-name-list-container' key={dog.id}>
           <p className='material-icons'>pets</p>
           <Link to={`/dog/${dog.id}`}>
-              {dog.name}
+            {dog.name}
           </Link>
         </li>
       )
