@@ -1,1 +1,10 @@
-{}
+{
+  "testFiles": [
+    "dashboard_view.js",
+    "add_dog_view.js",
+    "add_event_view.js",
+    "calendar_view.js",
+    "no_data.js",
+    "error_handling.js"
+  ]
+}

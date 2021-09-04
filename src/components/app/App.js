@@ -72,10 +72,6 @@ export const App = () => {
     let today = new Date()
     let spreadArray = [...events]
     return spreadArray.reduce((newObj, currentEvent) => {
-      if (!newObj.completed) {
-        newObj.completed = []
-        newObj.outstanding = []
-      }
       if (currentEvent.completed) {
         newObj.completed = [...newObj.completed, currentEvent]
       }
@@ -84,7 +80,7 @@ export const App = () => {
         newObj.outstanding = [...newObj.outstanding, currentEvent]
       }
       return newObj
-    }, {})
+    }, { completed: [], outstanding: [] })
   }
 
   if (data) {

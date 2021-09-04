@@ -62,7 +62,8 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
-  
+        <p>{rewards}</p>
+
         <section>
           
           <section>
@@ -83,6 +84,7 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
+        <p>{rewards}</p>
   
         <section>
           
@@ -102,6 +104,7 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
+        <p>{rewards}</p>
   
         <section>
           <section>

@@ -1212,7 +1212,7 @@
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
-"@cypress/request@^2.88.5":
+"@cypress/request@^2.88.6":
   "integrity" "sha512-z0UxBE/+qaESAHY9p9sM2h8Y4XqtsbDCt0/DPOrqA/RZgKi4PkxdpXyK4wCCnSk1xHqWHZZAE+gV6aDAR6+caQ=="
   "resolved" "https://registry.npmjs.org/@cypress/request/-/request-2.88.6.tgz"
   "version" "2.88.6"
@@ -4171,12 +4171,12 @@
   "resolved" "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz"
   "version" "1.0.1"
 
-"cypress@^8.3.0":
-  "integrity" "sha512-zA5Rcq8AZIfRfPXU0CCcauofF+YpaU9HYbfqkunFTmFV0Kdlo14tNjH2E3++MkjXKFnv3/pXq+HgxWtw8CSe8Q=="
-  "resolved" "https://registry.npmjs.org/cypress/-/cypress-8.3.0.tgz"
-  "version" "8.3.0"
+"cypress@^8.3.1":
+  "integrity" "sha512-1v6pfx+/5cXhaT5T6QKOvnkawmEHWHLiVzm3MYMoQN1fkX2Ma1C32STd3jBStE9qT5qPSTILjGzypVRxCBi40g=="
+  "resolved" "https://registry.npmjs.org/cypress/-/cypress-8.3.1.tgz"
+  "version" "8.3.1"
   dependencies:
-    "@cypress/request" "^2.88.5"
+    "@cypress/request" "^2.88.6"
     "@cypress/xvfb" "^1.2.4"
     "@types/node" "^14.14.31"
     "@types/sinonjs__fake-timers" "^6.0.2"
