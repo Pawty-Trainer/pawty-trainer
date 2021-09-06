@@ -39,6 +39,7 @@ li {
 
 .rewards {
   font-size: 1.7em;
+  color: #43a047
 }
 
 @media screen and (max-width: 620px) {

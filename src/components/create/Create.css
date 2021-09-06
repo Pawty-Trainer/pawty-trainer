@@ -5,10 +5,10 @@ form {
   flex-direction: column;
   margin: 3rem;
   border-radius: 10px;
-  background-color: #94A89A;
+  background-color: #0077c2;
   padding: 3.5vh;
   width: 50vh;
-  box-shadow: 20px 20px 0px #D4E09B;
+  box-shadow: 20px 20px 0px #80d6ff;
 }
 
 input, button {
@@ -26,13 +26,14 @@ button {
   margin-bottom: 0;
   border-radius: 5px;
   border: none;
-  background-color: #C7AC92;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 button:hover {
   cursor:pointer;
-  background-color: #A44A3F;
+  background-color: #43a047;
+  color:white;
 }
 
 .text {
