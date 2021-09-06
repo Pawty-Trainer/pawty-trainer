@@ -29,13 +29,13 @@ describe('Dashboard View', () => {
   });
 
   it('It should show a list of the user\'s dogs', () => {
-    cy.get('li').should('have.length', 2)
-      .get('li').eq(0).contains('Gandolf')
-      .get('li').eq(1).contains('Legolas')
+    cy.get('.dog-name-list-container').should('have.length', 2)
+      .get('.dog-name-list-container').eq(0).children('a').contains('Gandolf')
+      .get('.dog-name-list-container').eq(1).children('a').contains('Legolas')
   });
 
   it('Clicking on a dog should take the user to a dog details page', () => {
-    cy.get('li').eq(0).click()
+    cy.get('.dog-name-list-container').eq(0).children('a').click()
     cy.url().should('include', '/dog/1')
       .get('dl').children('dd').eq(0).contains('Gandolf')
       .get('dl').children('dd').eq(1).contains('100')
@@ -43,19 +43,19 @@ describe('Dashboard View', () => {
   });
 
   it('A user should be able to delete a dog', () => {
-    cy.get('li').eq(0).click()
+    cy.get('.dog-name-list-container').eq(0).children('a').click()
     cy.get('button').click()
-    cy.get('li').should('have.length', 1)
+    cy.get('.dog-name-list-container').should('have.length', 1)
   });
 
   it('A user should see the next two chronological events', () => {
-    cy.get('.event-card').children('dl').should('have.length', 2)
-      .get('.event-card').children('dl').eq(0).children('dd').eq(2).contains('1/27/2022')
-      .get('.event-card').children('dl').eq(1).children('dd').eq(2).contains('3/27/2022')
+    cy.get('.event-card').children('ul').should('have.length', 2)
+      .get('.event-card').children('ul').eq(0).children('li').eq(2).contains('1/27/2022')
+      .get('.event-card').children('ul').eq(1).children('li').eq(2).contains('3/27/2022')
   });
 
   it('Clicking an event name should take the user to an event details page', () => {
-    cy.get('.event-card').children('dl').eq(0).children('dd').eq(1).click()
+    cy.get('.event-card').children('ul').eq(0).children('li').eq(1).children('a').click()
     cy.url().should('include', '/event/1')
       .get('dd').eq(0).contains('Gandolf')
       .get('dd').eq(1).contains('journey to Mount Doom')

@@ -9,9 +9,8 @@ import { AddEvent } from '../addEvent/AddEvent'
 import { Calendar } from '../calendar/Calendar'
 import { Event } from '../event/Event'
 import { Dog } from '../dog/Dog'
-import Create from '../create/Create';
+import { Create } from '../create/Create';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
-import { fetchBreeds} from '../../utils/apiCalls';
 
 export const App = () => {
   const { loading, error, data } = useQuery(QUERY_EVERYTHING)
@@ -19,13 +18,8 @@ export const App = () => {
   const [dogs, setDogs] = useState([]);
   const [events, setEvents] = useState([]);
   const [completedEvents, setCompletedEvents] = useState(0);
-  const [breeds, setBreeds] = useState([])
 
   useEffect(() => {
-    fetchBreeds()
-      .then((data)=> {
-        setBreeds(data)
-      })
     if (!loading && data) {
       setUser(data.user)
       setDogs(data.dogs)
@@ -99,7 +93,7 @@ export const App = () => {
             }/>
 
             <Route path='/create'>
-              <Create userID={1} breeds={breeds} />
+              <Create userID={1} />
             </Route>
 
             <Route path='/add_event'>
