@@ -85,10 +85,6 @@ export const App = () => {
         <Header />
         <main>
           <Switch>
-            <Route path='/'>
-              <Login />
-            </Route>
-
             <Route path='/signup'>
               <SignUp />
             </Route>
@@ -133,6 +129,10 @@ export const App = () => {
             <Route exact path='/404' render={() =>
               <Error errorCode={404} />
             }/>
+
+            <Route path='/'>
+              <Login />
+            </Route>
             
             <Redirect to='/404' />
           </Switch>
