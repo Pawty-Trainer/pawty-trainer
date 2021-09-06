@@ -47,5 +47,4 @@ describe('Add Event View', () => {
       .get('.event-submit-btn').click()
       .get('.event-error-msg').should('include.text', 'Sorry, you must input all fields before creating an event!')
   })
-
 })
