@@ -34,6 +34,7 @@ li {
   background-color: #0077c2;
   border-radius: 8px;
   box-shadow: 10px 10px 0px #80d6ff;
+  width:55vh;
 }
 
 .rewards {
@@ -47,6 +48,7 @@ li {
   .my-dogs {
     border-right: none;
     margin-right:0vh;
+    margin-left:25vh;
   }
   dashboard > h2 {
     font-size: 2em;

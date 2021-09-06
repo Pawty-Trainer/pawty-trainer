@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 620px) {
   .event-card {
-    width: 45vh;
+    width: 55vh;
     margin-top:0;
   }
 }
