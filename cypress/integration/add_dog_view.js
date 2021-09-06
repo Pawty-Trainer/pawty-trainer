@@ -1,5 +1,3 @@
-import { aliasQuery } from "../utils/graphql-test-utils";
-
 describe('Add Dog View', () => {
 
   beforeEach(() => {
