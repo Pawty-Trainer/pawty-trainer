@@ -42,7 +42,7 @@ export const AddEvent = ({ dogs }) => {
   return (
     <>
       <form>
-        <h2 className='text event-title'>Add New Event</h2>
+        <h2 className='text event-title'>Add New Event!</h2>
         <input
           type='text'
           placeholder='Event Name'
@@ -51,7 +51,7 @@ export const AddEvent = ({ dogs }) => {
           onChange={(event)=> setEventName(event.target.value)}
           required
         />
-        <label className='text'>Select dog:</label>
+        <label className='text select-dog-label'>Select dog:</label>
         <select className='select-dog-input' onChange={(event)=> setDogId(event.target.value)}>
           <option 
             placeholder='Dog Name'
@@ -78,7 +78,7 @@ export const AddEvent = ({ dogs }) => {
           required
         />
         <button className='event-submit-btn' onClick={event=> submitEvent(event)}>Submit</button>
-        <p>{formError}</p>
+        <p className='event-error-msg'>{formError}</p>
       </form> 
     </>
   )

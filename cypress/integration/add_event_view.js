@@ -1,12 +1,10 @@
 describe('Add Event View', () => {
 
   beforeEach(() => {
-    beforeEach(() => {
       cy.loadHome()
         .get('.add-event-nav')
         .click()
     });
-  });
 
   it('Should have the header with a title, and 4 links', () => {
     cy.get('.title').should('include.text', 'Pawty Trainer')
@@ -18,36 +16,36 @@ describe('Add Event View', () => {
 
   it('Should have a form with a title, 3 inputs, and a submit button', () => {
     cy.get('.event-title').should('include.text', 'Add New Event!')
-      .get('.name-input').should('exist')
-      .get('.age-input').should('exist')
-      .get('.select-label').should('exist')
-      .get('.select').should('exist')
-      .get('.create-btn').should('exist')
-  })
+      .get('.event-name-input').should('exist')
+      .get('.select-dog-input').should('exist')
+      .get('.select-dog-label').should('exist')
+      .get('.set-date-input').should('exist')
+      .get('.event-submit-btn').should('exist')
+  });
 
-  it('Should submit a new dog', () => {
-    cy.get('.name-input').should('have.value', '')
-      .get('.name-input').type('Izzy')
-      .get('.name-input').should('have.value', 'Izzy')
+  it('Should submit a new event', () => {
+    cy.get('.event-name-input').should('have.value', '')
+      .get('.event-name-input').type('Shake')
+      .get('.event-name-input').should('have.value', 'Shake')
 
-      .get('.age-input').should('have.value', '')
-      .get('.age-input').type('12')
-      .get('.age-input').should('have.value', '12')
+      .get('.select-dog-input').should('have.value', '0')
+      .get('.select-dog-input').select('Gandolf')
+      .get('.select-dog-input').should('have.value', '1')
 
-      .get('.select').should('have.value', '')
-      .get('.select').type('Golden Retriever')
+      .get('.set-date-input').should('have.value', '')
+      .get('.set-date-input').type('2021-09-15')
   })
 
   it('Should show an error message if an input is missing', () => {
-    cy.get('.name-input').should('have.value', '')
-      .get('.name-input').type('Izzy')
-      .get('.name-input').should('have.value', 'Izzy')
+    cy.get('.event-name-input').should('have.value', '')
+      .get('.event-name-input').type('Shake')
+      .get('.event-name-input').should('have.value', 'Shake')
 
-      .get('.age-input').should('have.value', '')
-      .get('.age-input').type('12')
-      .get('.age-input').should('have.value', '12')
-      .get('.create-btn').click()
-      .get('.create-dog-error').should('include.text', 'Sorry, you must input all fields before creating a dog!')
+      .get('.select-dog-input').should('have.value', '0')
+      .get('.select-dog-input').select('Gandolf')
+      .get('.select-dog-input').should('have.value', '1')
+      .get('.event-submit-btn').click()
+      .get('.event-error-msg').should('include.text', 'Sorry, you must input all fields before creating an event!')
   })
 
-});
+})
