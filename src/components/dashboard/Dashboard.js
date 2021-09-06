@@ -62,20 +62,16 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
         <p>{rewards}</p>
-
         <section>
-          
           <section>
             <h3>My Dogs</h3>
-            <ul>
+            <ul className='dog-list-names'>
               {dogList}
             </ul>
           </section>
-  
           <section>
             <h3>No Upcoming Events</h3>
           </section>
-
         </section>
       </section>
     )
@@ -100,12 +96,10 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
         <p>{rewards}</p>
-  
         <section>
           <section>
             <h3>Add a dog!</h3>
           </section>
-  
           <section>
             <h3>No Upcoming Events</h3>
           </section>

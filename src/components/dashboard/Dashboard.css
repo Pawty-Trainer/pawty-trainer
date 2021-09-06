@@ -22,7 +22,7 @@ li {
 
 .material-icons {
   font-size: 1.7em;
-  color:white;
+  color:#0077c2;
 }
 
 .section-titles {
@@ -31,15 +31,36 @@ li {
 
 .my-dogs {
   margin-right: 30vh;
-  background-color: #0077c2;
-  border-radius: 8px;
-  box-shadow: 10px 10px 0px #80d6ff;
-  width:55vh;
+  border-right: #0077c2;
 }
 
 .rewards {
   font-size: 1.7em;
   color: #43a047
+}
+
+.dog-name-list-container > a:link {
+  color: #002171;
+  font-weight: bolder;
+  font-size: 1.5em;
+} 
+
+.dog-name-list-container > a:visited {
+  color: #002171;
+  font-weight: bolder;
+  font-size: 1.5em;
+} 
+
+.dog-name-list-container > a:hover {
+  color: #43a047;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.dog-name-list-container > a:active {
+  color: #43a047;
+  font-weight: bolder;
+  font-size: 1.5em;
 }
 
 @media screen and (max-width: 620px) {
@@ -48,14 +69,13 @@ li {
   }
   .my-dogs {
     border-right: none;
-    margin-right:0vh;
-    margin-left:25vh;
+    margin-right: 0vh;
   }
   dashboard > h2 {
     font-size: 2em;
   }
   .section-titles {
-    font-size:1.7em;
+    font-size: 1.7em;
     border-bottom: solid white;
     margin-bottom: 1vh;
   }
