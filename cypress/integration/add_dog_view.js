@@ -1,14 +1,11 @@
+import { aliasQuery } from "../utils/graphql-test-utils";
+
 describe('Add Dog View', () => {
 
   beforeEach(() => {
-    cy.fixture('user_query').then((testUsers) => {
-      cy.intercept('POST', 'http://localhost:3000/graphql', (req) => {
-
-      })
-      cy.visit("http://localhost:3000/")
+    cy.loadHome()
       .get('.add-dog-nav')
       .click()
-    })
   });
 
   it('Should have the header with a title, and 4 links', () => {
@@ -41,10 +38,15 @@ describe('Add Dog View', () => {
       .get('.select').type('Golden Retriever')
   })
 
-  it('Should add a new dog', () => {
-    cy.get('.create-btn').click()
-      .get('.dashboard-nav').click()
-      .get('.dog-list-names').should('have.length', '3')
-  })
+  it('Should show an error message if an input is missing', () => {
+    cy.get('.name-input').should('have.value', '')
+      .get('.name-input').type('Izzy')
+      .get('.name-input').should('have.value', 'Izzy')
 
+      .get('.age-input').should('have.value', '')
+      .get('.age-input').type('12')
+      .get('.age-input').should('have.value', '12')
+      .get('.create-btn').click()
+      .get('.create-dog-error').should('include.text', 'Sorry, you must input all fields before creating a dog!')
+  })
 });

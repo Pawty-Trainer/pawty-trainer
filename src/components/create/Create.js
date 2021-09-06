@@ -82,7 +82,7 @@ export const Create = ({ userID }) => {
         onChange={(event) => setBreed(event.value)}
       />
       <button className='create-btn' onClick={event => submitDog(event)}>Create</button>
-      <p>{formError}</p>
+      <p className='create-dog-error'>{formError}</p>
     </form>  
   )
 }
