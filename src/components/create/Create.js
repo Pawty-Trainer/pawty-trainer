@@ -53,6 +53,7 @@ const Create = ({ userID, breeds }) => {
         placeholder='Name'
         name = 'name'
         value= {name}
+        className='name-input'
         onChange={(event)=> setName(event.target.value)}
         required
       />
@@ -62,16 +63,17 @@ const Create = ({ userID, breeds }) => {
         name = 'age'
         min='0'
         value= {age}
+        className='age-input'
         onChange={(event)=> setAge(event.target.value)}
         required
       />
-      <label className='text'>Select Breed:</label>
+      <label className='select-label text'>Select Breed:</label>
       <Select
         className='select'
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />
-      <button onClick={event => submitDog(event)}>Create</button>
+      <button className='create-btn' onClick={event => submitDog(event)}>Create</button>
       <p>{formError}</p>
     </form>  
   )
