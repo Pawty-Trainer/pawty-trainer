@@ -48,3 +48,13 @@
     margin-top:0;
   }
 }
+
+
+@media screen and (min-width: 620px) {
+  .event-name, .event-date, .complete-title, .date {
+    font-size: 1.5em;
+  }
+  .event-card {
+    width:65vh;
+  }
+}

@@ -24,12 +24,12 @@ export const EventCard = ({ event }) => {
           <dd className="dog-name">{event.dog.name}</dd>
         </div>
         <div >
-          <dd className='description-container'>
+          <dd className='description-container event-name'>
             <Link to={`/event/${event.id}`} key={event.id}><em>{event.name}</em></Link>
           </dd>
         </div>
           <dt className='card-title event-date'>To be completed by</dt>
-          <dd>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
+          <dd className='date'>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
       </dl>
       <input type='checkbox' id='complete' name='complete' value='true' onClick={() => handleClick()}></input>
         <label className='complete-title' >Complete Event</label>

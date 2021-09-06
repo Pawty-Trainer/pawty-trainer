@@ -42,11 +42,11 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     return (
       <section className="dashboard">
         <h2>Welcome {userName}!</h2>
-        <p>{rewards}</p>
+        <p className='rewards'>{rewards}</p>
         <section className='sections'>
           <section className='my-dogs'>
             <h3 className='section-titles'>My Dogs</h3>
-            <ul>
+            <ul className='dog-list'>
               {dogList}
             </ul>
           </section>
