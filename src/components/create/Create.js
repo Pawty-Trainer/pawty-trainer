@@ -1,18 +1,27 @@
 import './Create.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_NEW_DOG } from '../../utils/graph_mutations';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
+import { fetchBreeds } from '../../utils/apiCalls';
 import Select from 'react-select'
 
-const Create = ({ userID, breeds }) => {
+const Create = ({ userID }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breedType, setBreed] = useState('');
   const [formError, setFormError] = useState('')
+  const [breeds, setBreeds] = useState([])
   const [addDog, { loading, error }] = useMutation(ADD_NEW_DOG, {
     refetchQueries: [QUERY_EVERYTHING]
   })
+
+  useEffect(() => {
+    fetchBreeds()
+      .then((data)=> {
+        setBreeds(data)
+      })
+  }, [])
 
   const submitDog = event => {
     event.preventDefault();
