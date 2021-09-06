@@ -31,8 +31,10 @@ export const EventCard = ({ event }) => {
           <dt className='card-title event-date'>To be completed by</dt>
           <dd className='date'>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
       </dl>
+      <label>
       <input type='checkbox' id='complete' name='complete' value='true' onClick={() => handleClick()}></input>
         <label className='complete-title' >Complete Event</label>
+      </label> 
     </section>
   )
 }

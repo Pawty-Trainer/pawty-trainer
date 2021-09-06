@@ -46,7 +46,7 @@ li {
   }
   .my-dogs {
     border-right: none;
-    margin-right: 0vh;
+    margin-right:0vh;
   }
   dashboard > h2 {
     font-size: 2em;
