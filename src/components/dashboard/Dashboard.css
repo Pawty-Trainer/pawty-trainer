@@ -33,3 +33,13 @@ li {
   border-right: solid white;
   margin-right: 30vh;
 }
+
+@media screen and (max-width: 620px) {
+  .dashboard > section {
+    display: block;
+  }
+  .my-dogs {
+    border-right: none;
+    margin-right: 0vh;
+  }
+}
