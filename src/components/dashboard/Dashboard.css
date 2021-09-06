@@ -52,7 +52,7 @@ li {
   }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 620px) and (max-width:950px){
   .dashboard > section {
     display: block;
   }
