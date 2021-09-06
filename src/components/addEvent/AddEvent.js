@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './AddEvent.css';
 import { useState } from 'react';
 import { useMutation } from "@apollo/client";
@@ -80,3 +81,7 @@ export const AddEvent = ({ dogs }) => {
     </>
   )
 }
+
+Error.propTypes = {
+  dogs: PropTypes.arrayOf(PropTypes.object).isRequired
+};
