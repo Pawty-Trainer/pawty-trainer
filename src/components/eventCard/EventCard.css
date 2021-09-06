@@ -41,3 +41,10 @@
 .event-description {
   color: #A44A3F;
 }
+
+@media screen and (max-width: 620px) {
+  .event-card {
+    width: 45vh;
+    margin-top:0;
+  }
+}
