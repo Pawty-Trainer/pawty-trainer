@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Event.css';
 import { Link } from 'react-router-dom';
 
@@ -19,3 +20,7 @@ export const Event = ({ matchingEvent }) => {
     </section>
   )
 }
+
+Error.propTypes = {
+  matchingEvent: PropTypes.object.isRequired
+};

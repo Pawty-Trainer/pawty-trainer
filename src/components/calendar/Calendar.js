@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Calendar.css';
 import { EventCard } from '../eventCard/EventCard'
 
@@ -28,3 +29,7 @@ export const Calendar = ({ events }) => {
     )
   }
 }
+
+Error.propTypes = {
+  events: PropTypes.arrayOf(PropTypes.object).isRequired
+};

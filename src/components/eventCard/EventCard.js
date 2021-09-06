@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './EventCard.css';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -19,22 +20,25 @@ export const EventCard = ({ event }) => {
 
   return (
     <section key={event.id} className="event-card">
-      <dl>
-        <div className='description-container'>
-          <dd className="dog-name">{event.dog.name}</dd>
-        </div>
-        <div >
-          <dd className='description-container event-name'>
-            <Link to={`/event/${event.id}`} key={event.id}><em>{event.name}</em></Link>
-          </dd>
-        </div>
-          <dt className='card-title event-date'>To be completed by</dt>
-          <dd className='date'>{(new Date(event.eventDatetime)).toLocaleString()}</dd>
-      </dl>
-      <label>
-      <input type='checkbox' id={event.id} name='complete' value='true' onClick={() => handleClick()}></input>
-        <label className='complete-title' >Complete Event</label>
-      </label> 
+      <ul>
+        <li className="dog-name">{event.dog.name}</li>
+        <li className='event-name'>
+          <Link to={`/event/${event.id}`} key={event.id}>
+            <em>{event.name}</em>
+          </Link>
+        </li>
+        <li className='card-title event-date'>
+          To be completed by {(new Date(event.eventDatetime)).toLocaleString()}
+        </li>
+        <li>
+          <input type='checkbox' id={event.id} value='true' onClick={() => handleClick()}></input>
+          <label for={event.id} className='complete-title' >Complete Event</label>
+        </li>
+      </ul>
     </section>
   )
 }
+
+Error.propTypes = {
+  event: PropTypes.object.isRequired
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Dashboard.css';
 import { Link } from 'react-router-dom'
 import { EventCard } from '../eventCard/EventCard'
@@ -108,3 +109,10 @@ export const Dashboard = ({ userName, dogs, events, completedEvents }) => {
     )
   }
 }
+
+Error.propTypes = {
+  userName: PropTypes.string.isRequired,
+  dogs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  events: PropTypes.arrayOf(PropTypes.object).isRequired,
+  completedEvents: PropTypes.arrayOf(PropTypes.object).isRequired
+};

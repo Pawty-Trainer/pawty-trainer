@@ -25,16 +25,16 @@ describe('Calendar View', () => {
   });
 
   it('A user should see all upcoming incompleted events in chronological order', () => {
-    cy.get('dl').should('have.length', 5)
-      .get('dl').eq(0).children('dd').eq(2).contains('1/27/2022')
-      .get('dl').eq(1).children('dd').eq(2).contains('3/27/2022')
-      .get('dl').eq(2).children('dd').eq(2).contains('4/26/2022')
-      .get('dl').eq(3).children('dd').eq(2).contains('5/26/2022')
-      .get('dl').eq(4).children('dd').eq(2).contains('8/27/2022')
+    cy.get('.event-card').children('ul').should('have.length', 5)
+      .get('.event-card').children('ul').eq(0).children('li').eq(2).contains('1/27/2022')
+      .get('.event-card').children('ul').eq(1).children('li').eq(2).contains('3/27/2022')
+      .get('.event-card').children('ul').eq(2).children('li').eq(2).contains('4/26/2022')
+      .get('.event-card').children('ul').eq(3).children('li').eq(2).contains('5/26/2022')
+      .get('.event-card').children('ul').eq(4).children('li').eq(2).contains('8/27/2022')
   });
 
   it('Clicking an event name should take the user to an event details page', () => {
-    cy.get('dl').eq(2).children('dd').eq(1).click()
+    cy.get('.event-card').children('ul').eq(2).children('li').eq(1).children('a').click()
     cy.url().should('include', '/event/4')
       .get('dd').eq(0).contains('Legolas')
       .get('dd').eq(1).contains('battle for Helm\'s Deep')
