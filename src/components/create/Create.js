@@ -18,9 +18,7 @@ const Create = ({ userID }) => {
 
   useEffect(() => {
     fetchBreeds()
-      .then((data)=> {
-        setBreeds(data)
-      })
+      .then(data => setBreeds(data))
   }, [])
 
   const submitDog = event => {

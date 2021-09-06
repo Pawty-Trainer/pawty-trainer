@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from "@apollo/client";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
+import { Login } from '../login/Login';
+import { SignUp } from '../signup/SignUp';
 import { Header } from '../header/Header';
 import { Dashboard } from '../dashboard/Dashboard'
 import { Error } from '../error/Error'
@@ -83,7 +85,15 @@ export const App = () => {
         <Header />
         <main>
           <Switch>
-            <Route exact path='/' render={() =>
+            <Route path='/'>
+              <Login />
+            </Route>
+
+            <Route path='/signup'>
+              <SignUp />
+            </Route>
+
+            <Route exact path='/dashboard' render={() =>
               <Dashboard
                 userName={user.name}
                 dogs={dogs}
