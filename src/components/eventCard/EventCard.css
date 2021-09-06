@@ -17,10 +17,10 @@
 .event-card {
   margin: 3rem;
   border-radius: 10px;
-  background-color: #94A89A;
+  background-color: #0077c2;
   padding: 3.5vh;
   width: 50vh;
-  box-shadow: 10px 10px 0px #D4E09B;
+  box-shadow: 10px 10px 0px #80d6ff;
   color: white;
 }
 
@@ -40,4 +40,21 @@
 
 .event-description {
   color: #A44A3F;
+}
+
+@media screen and (max-width: 620px) {
+  .event-card {
+    width: 55vh;
+    margin-top:0;
+  }
+}
+
+
+@media screen and (min-width: 620px) and (max-width:950px) {
+  .event-name, .event-date, .complete-title, .date {
+    font-size: 1.5em;
+  }
+  .event-card {
+    width:65vh;
+  }
 }

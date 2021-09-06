@@ -1,11 +1,11 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  color: white;
 }
 
 .dashboard > h2 {
   text-transform: capitalize;
+  color: black;
 }
 
 .dashboard > section {
@@ -22,14 +22,85 @@ li {
 
 .material-icons {
   font-size: 1.7em;
+  color:#0077c2;
 }
 
 .section-titles {
   font-size: 2em;
 }
 
-
 .my-dogs {
-  border-right: solid white;
   margin-right: 30vh;
+  border-right: #0077c2;
+}
+
+.rewards {
+  font-size: 1.7em;
+  color: #43a047
+}
+
+.dog-name-list-container > a:link {
+  color: #002171;
+  font-weight: bolder;
+  font-size: 1.5em;
+} 
+
+.dog-name-list-container > a:visited {
+  color: #002171;
+  font-weight: bolder;
+  font-size: 1.5em;
+} 
+
+.dog-name-list-container > a:hover {
+  color: #43a047;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.dog-name-list-container > a:active {
+  color: #43a047;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 620px) {
+  .dashboard > section {
+    display: block;
+  }
+  .my-dogs {
+    border-right: none;
+    margin-right: 0vh;
+  }
+  dashboard > h2 {
+    font-size: 2em;
+  }
+  .section-titles {
+    font-size: 1.7em;
+    border-bottom: solid white;
+    margin-bottom: 1vh;
+  }
+}
+
+@media screen and (min-width: 620px) and (max-width:950px){
+  .dashboard > section {
+    display: block;
+  }
+  .my-dogs {
+    border-right: none;
+    margin-right: 0vh;
+  }
+  dashboard > h2 {
+    font-size: 4em;
+  }
+  .section-titles {
+    font-size:2.5em;
+    border-bottom: solid white;
+    margin-bottom: 1vh;
+  }
+  .rewards {
+    font-size: 2em;
+  }
+  .dog-list {
+    font-size: 1.5em;
+  }
 }

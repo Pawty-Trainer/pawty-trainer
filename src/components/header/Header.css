@@ -4,7 +4,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #94A89A;
+  background-color: #0077c2;
   padding: 1rem;
 }
 
@@ -18,7 +18,7 @@ nav > a {
 }
 
 .title {
-  color: #A44A3F;
+  color: white;
   font-size: 3.5em;
 }
 
@@ -35,4 +35,14 @@ nav > a {
 .material-icons {
   font-size: 2em;
   padding-bottom: 0;
+}
+
+@media screen and (max-width: 620px) {
+  .title {
+    font-size: 2.5em;
+  }
+  nav > a {
+    font-size: .8em;
+    margin:.5em;
+  }
 }
