@@ -28,10 +28,13 @@ li {
   font-size: 2em;
 }
 
-
 .my-dogs {
   border-right: solid white;
   margin-right: 30vh;
+}
+
+.rewards {
+  font-size: 1.7em;
 }
 
 @media screen and (max-width: 620px) {
