@@ -55,7 +55,7 @@ export const Create = ({ userID }) => {
 
   return(
     <form className='add-dog'>
-      <h2 className='train-dog-title text'>Train your dog!</h2>
+      <h2 className='train-dog-title text'>Train Your Dog!</h2>
       <input
         type='text'
         placeholder='Name'
