@@ -9,7 +9,7 @@ import { AddEvent } from '../addEvent/AddEvent'
 import { Calendar } from '../calendar/Calendar'
 import { Event } from '../event/Event'
 import { Dog } from '../dog/Dog'
-import Create from '../create/Create';
+import { Create } from '../create/Create';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 import { fetchBreeds} from '../../utils/apiCalls';
 

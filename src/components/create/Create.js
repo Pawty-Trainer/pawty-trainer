@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Create.css';
 import React, { useState } from 'react';
 import { useMutation } from "@apollo/client";
@@ -5,7 +6,7 @@ import { ADD_NEW_DOG } from '../../utils/graph_mutations';
 import { QUERY_EVERYTHING } from '../../utils/graph_queries';
 import Select from 'react-select'
 
-const Create = ({ userID, breeds }) => {
+export const Create = ({ userID, breeds }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breedType, setBreed] = useState('');
@@ -77,4 +78,7 @@ const Create = ({ userID, breeds }) => {
   )
 }
 
-export default Create
+Error.propTypes = {
+  userID: PropTypes.number.isRequired,
+  breeds: PropTypes.arrayOf(PropTypes.object).isRequired
+};

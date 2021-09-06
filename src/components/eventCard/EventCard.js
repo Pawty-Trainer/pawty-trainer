@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './EventCard.css';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -38,3 +39,7 @@ export const EventCard = ({ event }) => {
     </section>
   )
 }
+
+Error.propTypes = {
+  event: PropTypes.object.isRequired
+};

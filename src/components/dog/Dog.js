@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Dog.css';
 import { useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
@@ -37,3 +38,8 @@ export const Dog = ({ matchingDog, removeDog }) => {
     </section>
   )
 }
+
+Error.propTypes = {
+  matchingDog: PropTypes.object.isRequired,
+  removeDog: PropTypes.func.isRequired
+};
