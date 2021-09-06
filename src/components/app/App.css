@@ -10,7 +10,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #C7AC92;
+  background-color:#F5F5F6;
 }
 
 a:link {
@@ -22,11 +22,11 @@ a:visited {
 } 
 
 a:hover {
-  color: #D4E09B;
+  color: #43a047;
 }
 
 a:active {
-  color: #D4E09B;
+  color: #43a047;
 }
 
 main {

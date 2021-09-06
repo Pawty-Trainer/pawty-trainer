@@ -1,11 +1,11 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  color: white;
 }
 
 .dashboard > h2 {
   text-transform: capitalize;
+  color: black;
 }
 
 .dashboard > section {
@@ -22,6 +22,7 @@ li {
 
 .material-icons {
   font-size: 1.7em;
+  color:white;
 }
 
 .section-titles {
@@ -29,8 +30,10 @@ li {
 }
 
 .my-dogs {
-  border-right: solid white;
   margin-right: 30vh;
+  background-color: #0077c2;
+  border-radius: 8px;
+  box-shadow: 10px 10px 0px #80d6ff;
 }
 
 .rewards {
