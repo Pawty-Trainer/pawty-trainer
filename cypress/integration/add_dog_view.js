@@ -15,7 +15,7 @@ describe('Add Dog View', () => {
   });
 
   it('Should have a form with a title, 3 inputs, and a button', () => {
-    cy.get('.train-dog-title').should('include.text', 'Train Your dog!')
+    cy.get('.train-dog-title').should('include.text', 'Train Your Dog!')
       .get('.name-input').should('exist')
       .get('.age-input').should('exist')
       .get('.select-label').should('exist')
