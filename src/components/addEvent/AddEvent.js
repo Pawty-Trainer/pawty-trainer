@@ -42,16 +42,17 @@ export const AddEvent = ({ dogs }) => {
   return (
     <>
       <form>
-        <h2 className='text'>Add New Event</h2>
+        <h2 className='text event-title'>Add New Event!</h2>
         <input
           type='text'
           placeholder='Event Name'
           value={eventName}
+          className='event-name-input'
           onChange={(event)=> setEventName(event.target.value)}
           required
         />
-        <label className='text'>Select dog:</label>
-        <select onChange={(event)=> setDogId(event.target.value)}>
+        <label className='text select-dog-label'>Select dog:</label>
+        <select className='select-dog-input' onChange={(event)=> setDogId(event.target.value)}>
           <option 
             placeholder='Dog Name'
             key={dogId} 
@@ -72,11 +73,12 @@ export const AddEvent = ({ dogs }) => {
           type='date'
           placeholder='EventDateTime'
           value= {eventDate}
+          className='set-date-input'
           onChange={(event)=> setEventDate(event.target.value)}
           required
         />
-        <button onClick={event=> submitEvent(event)}>Submit</button>
-        <p>{formError}</p>
+        <button className='event-submit-btn' onClick={event=> submitEvent(event)}>Submit</button>
+        <p className='event-error-msg'>{formError}</p>
       </form> 
     </>
   )

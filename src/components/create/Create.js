@@ -55,12 +55,13 @@ export const Create = ({ userID }) => {
 
   return(
     <form className='add-dog'>
-      <h2 className='train-dog-title text'>Train your dog!</h2>
+      <h2 className='train-dog-title text'>Train Your Dog!</h2>
       <input
         type='text'
         placeholder='Name'
         name = 'name'
         value= {name}
+        className='name-input'
         onChange={(event)=> setName(event.target.value)}
         required
       />
@@ -70,17 +71,18 @@ export const Create = ({ userID }) => {
         name = 'age'
         min='0'
         value= {age}
+        className='age-input'
         onChange={(event)=> setAge(event.target.value)}
         required
       />
-      <label className='text'>Select Breed:</label>
+      <label className='select-label text'>Select Breed:</label>
       <Select
         className='select'
         options = {options}
         onChange={(event) => setBreed(event.value)}
       />
-      <button onClick={event => submitDog(event)}>Create</button>
-      <p>{formError}</p>
+      <button className='create-btn' onClick={event => submitDog(event)}>Create</button>
+      <p className='create-dog-error'>{formError}</p>
     </form>  
   )
 }

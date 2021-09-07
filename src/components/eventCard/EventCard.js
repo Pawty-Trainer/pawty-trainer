@@ -28,7 +28,7 @@ export const EventCard = ({ event }) => {
           </Link>
         </li>
         <li className='card-title event-date'>
-          To be completed by {(new Date(event.eventDatetime)).toLocaleString()}
+          To be completed by: {(new Date(event.eventDatetime)).toLocaleString()}
         </li>
         <li>
           <input type='checkbox' id={event.id} value='true' onClick={() => handleClick()}></input>
