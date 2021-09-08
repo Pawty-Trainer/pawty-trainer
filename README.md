@@ -34,28 +34,50 @@ Our wireframes can be found [here](https://miro.com/app/board/o9J_l0srtUU=/)!
 - [Learning Goals](#learning-goals)
 - [How to use the app](#local-installation)
 - [Future Additions](#future-additions--reflections)
- 
+
 ## Contributors
 ### Frontend
 <table>
   <tr>
-    <td align="center" > <a href="https://github.com/sydnerd">Sydney Bear</td>
-    <td align="center"> <a href="https://github.com/alexmkio">Alex Kio</td>
+    <td align="center">Sydney Bear</td>
+    <td align="center">Alex Kio</td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/sydnerd">GitHub</a></td>
+    <td align="center"><a href="https://github.com/alexmkio">GitHub</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/sydneybear/">LinkedIn</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/alexkio/">LinkedIn</a></td>
+  </tr>
+  <tr>
     <td><img src="https://avatars.githubusercontent.com/u/78241098?v=4" alt='Portrait photo of Sydney' width="150" height="auto" /></td>
     <td><img src="https://avatars.githubusercontent.com/u/12686237?v=4" alt="Portrait photo of Alex" width="150" height="auto" /></td>
+  </tr>
 </table>
 
 ### Backend
 <table>
   <tr>
-    <td align="center" > <a href="https://github.com/EmmyMorris">Emmy Morris</td>
-    <td align="center"> <a href="https://github.com/kon-ham">Kon Ham</td>
-    <td align="center"> <a href="https://github.com/markcyen">Mark Yen</td>
+    <td align="center">Emmy Morris</td>
+    <td align="center">Kon Ham</td>
+    <td align="center">Mark Yen</td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/EmmyMorris">GitHub</a></td>
+    <td align="center"><a href="https://github.com/kon-ham">GitHub</a></td>
+    <td align="center"><a href="https://github.com/markcyen">GitHub</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/emmymorris/">LinkedIn</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/kon-ham/">LinkedIn</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/markcyen/">LinkedIn</a></td>
+  </tr>
+  <tr>
     <td><img src="https://avatars.githubusercontent.com/u/77904287?v=4" alt='Portrait photo of Emmy' width="150" height="auto" /></td>
     <td><img src="https://avatars.githubusercontent.com/u/72781879?v=4" alt="Portrait photo of Kon" width="150" height="auto" /></td>
     <td><img src="https://avatars.githubusercontent.com/u/77414433?v=4" alt="Portrait photo of Mark" width="150" height="auto" /></td>
+  </tr>
 </table>
 
 ## Learning Goals
