@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const QUERY_EVERYTHING = gql`
   query {
-    user(id: 1) {
+    user(id: 3) {
       id
       name
     } dogs {
